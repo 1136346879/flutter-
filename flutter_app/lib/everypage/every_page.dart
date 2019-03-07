@@ -13,9 +13,7 @@ import 'package:flutter_app/stream/stream_demo.dart';
 import 'package:flutter_app/state/state_management_demo.dart';
 import 'package:flutter_app/everypage/material_components.dart';
 import 'package:flutter_app/fivepage/TabBarView.dart';
-/**
- * 可以随意切换页面
- */
+/// 可以随意切换页面
 class every_page extends StatefulWidget{
 
   every_page(Key key) : super(key : key);

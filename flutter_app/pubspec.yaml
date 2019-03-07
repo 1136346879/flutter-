@@ -29,6 +29,7 @@ dependencies:
   carousel_slider: ^1.0.1
   flutter_webview_plugin: ^0.3.0+2
   share: ^0.5.3
+  url_launcher: ^4.0.1
   flutter_localizations:
         sdk: flutter
 
@@ -51,7 +52,7 @@ flutter:
   assets:
 
       - mock/
-      - img/
+      #- img/
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

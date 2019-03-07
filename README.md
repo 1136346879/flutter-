@@ -54,5 +54,9 @@ flutter 插件引入： （可以看项目中如何引入的）
 			  assets:
 				  - mock/
 				  - img/
+				  
+				  
+listview上部加入banner轮播图图组件，
+banner可以独立引用
 
 		

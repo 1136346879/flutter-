@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_app/pagedetail/detail.dart';
 import 'package:flutter_app/utils/screen.dart';
+import 'package:flutter_app/banner/pagination.dart';
+import 'package:flutter_app/fivepage/_movielist.dart' as movielist;
 
 Dio dio = new Dio();
 class shippingcar extends StatefulWidget {
-
-
-
 //  @override
 //  Widget build(BuildContext context) {
 //    return Scaffold(
@@ -53,7 +52,6 @@ class movieListStates extends State<shippingcar>{
     int offset = (page - 1) * pagesize;
     var response = await dio.get(
         'http://www.liulongbin.top:3005/api/v2/movie/top250?start=$offset&count=$pagesize');
-
     // 服务器返回的数据
     var result = response.data;
     print(result);
@@ -64,66 +62,37 @@ class movieListStates extends State<shippingcar>{
       total = result['total'];
     });
   }
+   headerView(){
+    return
+      Column(
+        children: <Widget>[
+        Stack(
+        //alignment: const FractionalOffset(0.9, 0.1),//方法一
+        children: <Widget>[
+            Pagination(),//轮播图 banner
+            Positioned(//方法二
+            top: 10.0,
+            left: 0.0,
+            // child: DisclaimerMsg(key:key,pWidget:this)
+             child:Text('免责声明')
+            ),
+          ]),
+        SizedBox(height: 1, child:Container(color: Theme.of(context).primaryColor)),
+        SizedBox(height: 10),
+        ],
+      );
+
+  }
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(itemCount: mlist.length,itemBuilder: (BuildContext ctx,int i){
-      // 每次循环，都拿到当前的电影Item项
-      var mItem = mlist[i];
-      return GestureDetector(
-        onLongPress: (){  // 跳转到详情
-          Navigator.push(context,
-              MaterialPageRoute(builder: (BuildContext ctx) {
-                return new MovieDetail(
-                  id: mItem['id'],
-                  title: mItem['title'],
-                );
-              }));
-
-        },
-        onTap: () {
-          // 跳转到详情
-          Navigator.push(context,
-            MaterialPageRoute(builder: (BuildContext ctx) {
-                return new MovieDetail(
-                  id: mItem['id'],
-                  title: mItem['title'],
-                );
-              }));
-            },
-              //item  最外层  容器
-              child: Container(
-                height: 200,
-                //类似于shape
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border(top: BorderSide(color: Colors.black12))),
-                //开始布局  row   Column
-                //横向排列
-                child: Row(
-                  children: <Widget>[
-                    Image.network(mItem['images']['small'],
-                        width: 130, height: 180, fit: BoxFit.cover),
-                    Container(
-                      padding: EdgeInsets.only(left: 10),
-                      height: 200,
-                      //竖直排列
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: <Widget>[
-                          Text('电影名称：${mItem['title']}'),
-                          Text('上映年份：${mItem['year']}年'),
-                          Text('电影类型：${mItem['genres'].join('，')}'),
-                          Text('豆瓣评分：${mItem['rating']['average']}分'),
-                          Text('主要演员：${mItem['title']}')
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            );
-    });
+    return new Column(
+      children: <Widget>[
+        // headerView(),
+        new Expanded(
+        child: movielist.Movielist(mlist,headerView),
+        )
+      ]
+    );
   }
   
   Widget buildActions(Color iconColor) {
@@ -166,3 +135,4 @@ class movieListStates extends State<shippingcar>{
     );
   }
 }
+
