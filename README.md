@@ -55,8 +55,18 @@ flutter 插件引入： （可以看项目中如何引入的）
 				  - mock/
 				  - img/
 				  
-				  
+		底部	bottomBatView 可以点击切换页面
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/Bottomtabbar.gif)	
+
+顶部 TopBar view 可以切换页面，滑动（点击）切换  listview 刷新和加载更多
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/TOpBar_listview_refresh_loadmore.gif)
+
 listview上部加入banner轮播图图组件，
 banner可以独立引用
 
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/banner_list.gif)
+
+listview嵌套gridview（中部） （解决gridview拦截滑动事件）
+
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/listview+gridView.gif)
 		
