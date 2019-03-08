@@ -66,7 +66,7 @@ class movieListStates extends State<shippingcar>{
     return
       Column(
         children: <Widget>[
-        Stack(
+        Stack(//帧布局  
         //alignment: const FractionalOffset(0.9, 0.1),//方法一
         children: <Widget>[
             Pagination(),//轮播图 banner
@@ -74,7 +74,7 @@ class movieListStates extends State<shippingcar>{
             top: 10.0,
             left: 0.0,
             // child: DisclaimerMsg(key:key,pWidget:this)
-             child:Text('免责声明')
+             child:Text('免责声明')  //悬浮在banner上方
             ),
           ]),
         SizedBox(height: 1, child:Container(color: Theme.of(context).primaryColor)),

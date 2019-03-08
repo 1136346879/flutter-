@@ -24,11 +24,14 @@ class _BannerState extends State<HomeBanner> {
   @override
   void initState() {
     super.initState();
-    controller = PageController(initialPage: realIndex);
-    timer = Timer.periodic(Duration(seconds: 5), (timer) { // 自动滚动
-      /// print(realIndex);
+    controller = PageController(
+                                initialPage: realIndex, 
+                                //viewportFraction: 0.8//所占屏幕比例
+                                );
+    timer = Timer.periodic(Duration(seconds: 2), (timer) { // 自动滚动
+      //  print(realIndex);
       controller.animateToPage(realIndex + 1,
-          duration: Duration(milliseconds: 300),
+          duration: Duration(milliseconds: 500),
           curve: Curves.linear);
     });
   }
@@ -43,15 +46,16 @@ class _BannerState extends State<HomeBanner> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 226.0,
+      height: 200.0,
       child: Stack(
-          alignment: Alignment.bottomCenter,
+         alignment: Alignment.bottomCenter,//小点的位置
           children: <Widget>[
             PageView(
               controller: controller,
               onPageChanged: _onPageChanged,
-              children: _buildItems(),),
-            _buildIndicator(), // 下面的小点
+              children: _buildItems(),
+              ),
+            _buildIndicator(), // 上面的小点
           ]),
     );
   }

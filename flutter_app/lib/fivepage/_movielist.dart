@@ -62,7 +62,7 @@ class statesListMovie extends State<Movielist> {
             },
               //item  最外层  容器
               child: Container(
-                height: 200,
+              height: 200,
                 //类似于shape
                 decoration: BoxDecoration(
                     color: Colors.white,

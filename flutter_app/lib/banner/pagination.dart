@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import './home_banner.dart';
 import '../model/story.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+/// 轮播图组件  可以直接引入
 class Pagination extends StatelessWidget {
   static final String routeName = '/material/page-selector';
   static final List<Icon> icons = <Icon>[

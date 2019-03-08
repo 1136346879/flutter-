@@ -55,6 +55,12 @@ flutter 插件引入： （可以看项目中如何引入的）
 
 listview上部加入banner轮播图图组件，
 banner可以独立引用
+可用两种方式编写CarouselSlider和PageView
+CarouselSlider方式
+
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/banner_CarouselSlider.gif)
+
+PageView方式：
 
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/banner_list.gif)
 
