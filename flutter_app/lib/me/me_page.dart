@@ -98,7 +98,8 @@ class MePage extends StatelessWidget {
             icon: Icons.person,
             onPressed: () {
               AppNavigator.pushWeb(
-                  context, 'https://github.com/Meandni', 'Github');
+                 context, 'https://github.com/1136346879/flutter-', 'Github');
+                  // context, 'https://github.com/Meandni', 'Github');
                     // context, 'http://t.pae.baidu.com/s?s=bai-los3tl', 'Github');
             },
           ),

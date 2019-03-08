@@ -42,12 +42,12 @@ class imagePageState extends State<pages_screen>{
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.grey[10],
         appBar: AppBar(
-          backgroundColor: Colors.deepPurple,
-          title: Text('NINGHAO'),
+          backgroundColor: Colors.blue,
+          title: Text('flutter_bar_listview'),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.search),
