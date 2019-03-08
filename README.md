@@ -72,3 +72,5 @@ listview嵌套gridview（中部） （解决gridview拦截滑动事件）
 
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/listview+gridView.gif)
 		
+		
+		如对您有帮助，欢迎starts 谢谢。
