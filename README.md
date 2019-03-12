@@ -87,4 +87,4 @@ flutter开发中遇到的
 		1.0 版本的 caffold组件是不需要加padding
 		升级之后  caffold组件必须加上padding，项目才能不报错，
 		但是升级之后，遇到一个问题： 而我引入的webview插件不能兼容，插件的Scaffold组件没有升级呢，没有padding
-		所以我这边又换回去了flutter Sdk 1.0版本
+		所以我这边又换回去了flutter Sdk 1.2版本
