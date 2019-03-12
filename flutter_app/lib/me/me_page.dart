@@ -108,7 +108,7 @@ class MePage extends StatelessWidget {
                     icon: Icons.video_label,
                     onPressed: () {
                       AppNavigator.pushWeb(
-                            context, 'http://t.pae.baidu.com/s?s=bai-los3tl', 'Github');
+                            context, 'http://lesson.hexun.com/web/play.html?classId=1001401', 'Github');
                     },
           )
         ],
@@ -197,7 +197,7 @@ class MePage extends StatelessWidget {
                         width: MediaQuery.of(context).size.width / 2.5,
                         margin: const EdgeInsets.only(right: 6.0),
                         child: new AspectRatio(
-                            aspectRatio: 4.0 / 2.0,
+                            aspectRatio: 4.0 / 2.5,
                             child: new Container(
                               foregroundDecoration:new BoxDecoration(
                                   image: new DecorationImage(
@@ -213,7 +213,7 @@ class MePage extends StatelessWidget {
                         margin: const EdgeInsets.only(right: 6.0),
                         width: MediaQuery.of(context).size.width / 2.5,
                         child: new AspectRatio(
-                            aspectRatio: 4.0 / 2.0,
+                            aspectRatio: 4.0 / 2.5,
                             child: new Container(
                               foregroundDecoration:new BoxDecoration(
                                   image: new DecorationImage(
@@ -229,7 +229,7 @@ class MePage extends StatelessWidget {
                         margin: const EdgeInsets.only(right: 6.0),
                         width: MediaQuery.of(context).size.width / 2.5,
                         child: new AspectRatio(
-                            aspectRatio: 4.0 / 2.0,
+                            aspectRatio: 4.0 / 2.5,
                             child: new Container(
                               foregroundDecoration:new BoxDecoration(
                                   image: new DecorationImage(
@@ -244,7 +244,7 @@ class MePage extends StatelessWidget {
                     new Container(
                         width: MediaQuery.of(context).size.width / 2.5,
                         child: new AspectRatio(
-                            aspectRatio: 4.0 / 2.0,
+                            aspectRatio: 4.0 / 2.5,
                             child: new Container(
                               foregroundDecoration:new BoxDecoration(
                                   image: new DecorationImage(

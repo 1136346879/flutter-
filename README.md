@@ -11,6 +11,7 @@ flutter项目代码都在lib目录下编写：
 
 flutter 插件引入： （可以看项目中如何引入的）
 			首先在项目更目录下找这个文件： pubspec.yaml
+			
 				dependencies:
 					  flutter:
 						sdk: flutter
@@ -29,9 +30,11 @@ flutter 插件引入： （可以看项目中如何引入的）
 					  share: ^0.5.3 
 					  flutter_localizations:
 							sdk: flutter	
+							
 本地文件（图片和json数据）引入：（可以看项目中如何引入的）
 
 			在更目录下创建文件夹，把资源文件放入，然后在 pubspec.yaml  文件下添加引入，代码中就可以访问到了
+			
 			flutter:
 			  # The following line ensures that the Material Icons font is
 			  # included with your application, so that you can use the icons in
@@ -54,7 +57,7 @@ flutter 插件引入： （可以看项目中如何引入的）
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/TOpBar_listview_refresh_loadmore.gif)
 
 listview上部加入banner轮播图图组件，
-banner可以独立引用
+banner可以独立引用（自动轮播，也可以手动左右拖拽）
 可用两种方式编写CarouselSlider和PageView
 CarouselSlider方式
 

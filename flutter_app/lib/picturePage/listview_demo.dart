@@ -33,6 +33,12 @@ class ListViewDemo extends StatelessWidget {
               child: InkWell(
                 splashColor: Colors.white.withOpacity(0.3),
                 highlightColor: Colors.white.withOpacity(0.1),
+                onDoubleTap:(){
+                    print('双击');
+                },
+                onLongPress: (){
+                   print('长按');
+                },
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => PostShow(post: posts[index]))
