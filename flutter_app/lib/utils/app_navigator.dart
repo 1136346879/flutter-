@@ -15,6 +15,7 @@ class AppNavigator {
   static pushWeb(BuildContext context, String url, String title) {
     Navigator.push(context, MaterialPageRoute(builder: (context) {
        return WebPage(url: url, title: title);
+
     }));
   }
 }

@@ -8,20 +8,16 @@ class SliverDemo extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: Colors.black54,
             // title: Text('NINGHAO'),
-             //  固定在上面 不随着list滚动
-            //  pinned: true,
-// 想下滚动显示 向上 跟随影藏
+            // pinned: true,
             floating: true,
-             // 新写一个面板跟随下滑显示 上滑消失 并伴随渐变动画
             expandedHeight: 178.0,
             flexibleSpace: FlexibleSpaceBar(
               title: Text(
                 'Ninghao Flutter'.toUpperCase(),
                 style: TextStyle(
                   fontSize: 15.0,
-                  letterSpacing: 1.0,
+                  letterSpacing: 3.0,
                   fontWeight: FontWeight.w400,
                 ),
               ),
