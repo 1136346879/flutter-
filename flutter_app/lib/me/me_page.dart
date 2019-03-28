@@ -16,46 +16,46 @@ class MePage extends StatelessWidget {
          primary:false,
         children: <Widget>[
           MeCell(
-            title: '学习记录',
+            title: '大学生活',
             icon: Icons.school,
             onPressed: () {},
           ),
           MeCell(
-            title: '已购',
+            title: '包包',
             icon: Icons.shopping_basket,
             onPressed: () {
               
             },
           ),
           MeCell(
-            title: '余额礼券',
+            title: '购物车',
             icon: Icons.add_shopping_cart,
             onPressed: () {},
           ),
           MeCell(
-            title: '读书会',
+            title: '小说',
             icon: Icons.book,
             onPressed: () {},
           ),
           MeCell(
-            title: '我的书架',
+            title: '书架',
             icon: Icons.collections_bookmark,
             onPressed: () {},
           ),
           MeCell(
-            title: '下载中心',
+            title: 'download',
             icon: Icons.file_download,
             onPressed: () {
             },
           ),
           MeCell(
-            title: '付费咨询',
+            title: '货币',
             icon: Icons.monetization_on,
             onPressed: () {
             },
           ),
           MeCell(
-            title: '活动广场',
+            title: 'sport',
             icon: Icons.accessibility,
             onPressed: () {
             },
@@ -74,12 +74,12 @@ class MePage extends StatelessWidget {
         primary:false,
         children: <Widget>[
           MeCell(
-            title: '社区',
+            title: '图片',
             icon: Icons.add_photo_alternate,
             onPressed: () {},
           ),
           MeCell(
-            title: '反馈',
+            title: '更多',
             icon: Icons.more,
             onPressed: () {},
           ),
@@ -104,7 +104,7 @@ class MePage extends StatelessWidget {
             },
           ),
           MeCell(
-                    title: '视频',
+                    title: '电影',
                     icon: Icons.video_label,
                     onPressed: () {
                       AppNavigator.pushWeb(
@@ -131,7 +131,7 @@ class MePage extends StatelessWidget {
                 color: Colors.grey,
               ),
               label: new Text(
-                "搜索知乎内容",
+                "搜索你喜欢的内容",
                 style: new TextStyle(color: Colors.grey, fontSize: 16.0),
               ),
             ),
@@ -170,7 +170,7 @@ class MePage extends StatelessWidget {
                     new Expanded(
                       child: new Container(
                         margin: const EdgeInsets.only(left: 8.0),
-                        child: new Text("视频创作", style: new TextStyle(fontSize: 16.0),),
+                        child: new Text("随手拍", style: new TextStyle(fontSize: 16.0),),
                       ),
                     ),
                     new Container(
@@ -178,7 +178,7 @@ class MePage extends StatelessWidget {
                           onPressed: (){},
                           child: Row(
                             children: <Widget>[
-                              new Text("拍一个", style: new TextStyle(color: Colors.grey),),
+                              new Text("gogogo->", style: new TextStyle(color: Colors.grey),),
                               Icon(Icons.arrow_forward_ios, color: Colors.grey,size: 16.0,)
                             ],
                           )

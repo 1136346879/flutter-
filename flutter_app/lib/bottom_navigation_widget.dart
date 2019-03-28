@@ -78,13 +78,13 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 ToastShow().showLongToast('搜索');
 
                 // 跳转到电影列表页
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext ctx) {
-                      return TabBarViewMe(
-                        id: '27110296',
-                        title: '无名之辈',
-                      );
-                    }));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (BuildContext ctx) {
+                //       return TabBarViewMe(
+                //         id: '27110296',
+                //         title: '无名之辈',
+                //       );
+                //     }));
               },
             )
           ],
@@ -165,7 +165,7 @@ class listView extends StatelessWidget{
           accountName: Text('汪栋邢'),
           currentAccountPicture: CircleAvatar(
             backgroundImage: NetworkImage(
-                'http://pic.qingting.fm/2018/0421/20180421072635816190.jpg%21800'),
+                'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553753128974&di=2bc8807e1e33707505bd6014c4fbe56a&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Fedu%2F2011%2F8%2F9%2F20110809155116bf4a3.jpg'),
           ),
           // 美化当前控件的
           decoration: BoxDecoration(

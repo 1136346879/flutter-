@@ -47,7 +47,8 @@ class every_pageState extends State<every_page>{
 //       home: NavigatorDemo(),
         initialRoute: '/mdc',
         routes: {
-          '/': (context) => TabBarViewMe(),
+          '/': (context) => HttpDemo(),
+          //  '/': (context) => TabBarViewMe(),
 //          '/about': (context) => Page(title: 'About'),
           '/form': (context) => FormDemo(),
           '/mdc': (context) => MaterialComponents(),

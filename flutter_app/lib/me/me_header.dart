@@ -16,17 +16,17 @@ class MeHeader extends StatelessWidget {
             leading: new Container(
               child: new CircleAvatar(
                   backgroundImage: CachedNetworkImageProvider(
-                      "https://meandni.com/img/avatar.jpg"),
+                      "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553753128974&di=2bc8807e1e33707505bd6014c4fbe56a&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Fedu%2F2011%2F8%2F9%2F20110809155116bf4a3.jpg"),
                   radius: 20.0
               ),
             ),
             title: new Container(
               margin: const EdgeInsets.only(bottom: 2.0),
-              child: new Text("MeandNi"),
+              child: new Text("汪栋邢"),
             ),
             subtitle: new Container(
               margin: const EdgeInsets.only(top: 2.0),
-              child: new Text("查看或编辑个人主页"),
+              child: new Text("铂金段位"),
             ),
           ),
         )
@@ -41,10 +41,10 @@ class MeHeader extends StatelessWidget {
     padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
     child: Row(
       children: <Widget>[
-        PersonDataItem(itemName: "我的创作", itemData: "101"),
+        PersonDataItem(itemName: "我的英雄", itemData: "101"),
         PersonDataItem(itemName: "关注", itemData: "1"),
-        PersonDataItem(itemName: "收藏夹", itemData: "21"),
-        PersonDataItem(itemName: "最近浏览", itemData: "10"),
+        PersonDataItem(itemName: "我喜欢的", itemData: "21"),
+        PersonDataItem(itemName: "最近使用", itemData: "10"),
       ],
     )
   );
