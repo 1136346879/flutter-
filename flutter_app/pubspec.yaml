@@ -20,16 +20,27 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   fluttertoast: ^2.1.1
-  dio: ^1.0.9
+  dio: ^2.0.14
+  # dio: ^1.0.9 
+  fluro: ^1.4.0
   rxdart: ^0.18.1
-  scoped_model: ^0.3.0
+  scoped_model: ^1.0.1
+  # scoped_model: ^0.3.0
   http: ^0.12.0
   english_words: ^3.1.0
   cached_network_image: ^0.5.1
   carousel_slider: ^1.0.1
   flutter_webview_plugin: ^0.3.0+2
-  share: ^0.5.3
+  #share: ^0.5.3
   url_launcher: ^4.0.1
+  flutter_markdown: ^0.2.0
+  # firebase_analytics: ^2.0.2+1 # 统计
+  flutter_spinkit: ^3.0.0 #加载指示器合集
+  share: ^0.6.0+1 #社会化分享
+  pull_to_refresh: ^1.1.6 #加载更多
+  shared_preferences: ^0.4.2 #简单数据存储
+  intl: ^0.15.7
+  flutter_screenutil: ^0.5.1
   flutter_localizations:
         sdk: flutter
 
@@ -50,8 +61,119 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-
       - mock/
+      - locale/
+      - assets/
+      - assets/imgs/
+      - docs/widget/scrollview/customscrollview/
+      - docs/widget/scrollview/gridview/
+      - docs/widget/scrollview/listview/
+      - docs/widget/scrollview/nestedscrollview/
+      - docs/widget/scrollview/scrollable/
+      - docs/widget/scrollview/scrollbar/
+      - docs/widget/scrollview/scrollcontroller/
+      - docs/widget/scrollview/singlechildscrollview/
+      - docs/widget/regular/row/
+      - docs/widget/regular/column/
+      - docs/widget/regular/container/
+      - docs/widget/regular/padding/
+      - docs/widget/regular/align/
+      - docs/widget/regular/center/
+      - docs/widget/regular/fittedbox/
+      - docs/widget/regular/aspectratio/
+      - docs/widget/regular/constrainedbox/
+      - docs/widget/regular/wrap/
+      - docs/widget/regular/table/
+      - docs/widget/regular/flow/
+      - docs/widget/regular/stack/
+      - docs/widget/regular/listview/
+      - docs/widget/regular/listbody/
+      - docs/widget/regular/layoutbuilder/
+      - docs/widget/bulletbox/simpledialog/
+      - docs/widget/bulletbox/alertdialog/
+      - docs/widget/bulletbox/bottomsheet/
+      - docs/widget/bulletbox/snackbar/
+      - docs/widget/bulletbox/expansionpanel/
+      - docs/widget/form/checkbox/
+      - docs/widget/form/checkboxlisttile/
+      - docs/widget/form/slider/
+      - docs/widget/form/switch/
+      - docs/widget/form/switchlisttile/
+      - docs/widget/form/daypicker/
+      - docs/widget/form/radio/
+      - docs/widget/form/radiolisttile/
+      - docs/widget/form/form/
+      - docs/widget/form/formfield/
+      - docs/widget/form/rawkeyboard/
+      - docs/widget/form/textfield/
+      - docs/widget/form/textinput/
+      - docs/widget/navigator/appbar/
+      - docs/widget/navigator/scaffold/
+      - docs/widget/navigator/bottomnavigationbar/
+      - docs/widget/navigator/drawer/
+      - docs/widget/navigator/floatingactionbutton/
+      - docs/widget/navigator/materialapp/
+      - docs/widget/navigator/navigator/
+      - docs/widget/navigator/pageview/
+      - docs/widget/navigator/popupmenubutton/
+      - docs/widget/navigator/tabbar/
+      - docs/widget/navigator/tabbarview/
+      - docs/widget/navigator/widgetsapp/
+      - docs/widget/gestures/absorbpointer/
+      - docs/widget/gestures/dismissible/
+      - docs/widget/gestures/dragtarget/
+      - docs/widget/gestures/gesturedetector/
+      - docs/widget/gestures/ignorepointer/
+      - docs/widget/gestures/longpressdraggable/
+      - docs/widget/animate/animationcontroller/
+      - docs/widget/animate/animatedbuilder/
+      - docs/widget/animate/animatedcontainer/
+      - docs/widget/animate/animatedcrossfade/
+      - docs/widget/animate/animateddefaulttextstyle/
+      - docs/widget/animate/animatedliststate/
+      - docs/widget/animate/animatedmodalbarrier/
+      - docs/widget/animate/animatedopacity/
+      - docs/widget/animate/animatedphysicalmodel/
+      - docs/widget/animate/animatedpositioned/
+      - docs/widget/animate/animatedsize/
+      - docs/widget/animate/animatedwidget/
+      - docs/widget/animate/animatedwidgetbasestate/
+      - docs/widget/animate/decoratedboxtransition/
+      - docs/widget/animate/fadetransition/
+      - docs/widget/animate/hero/
+      - docs/widget/animate/positionedtransition/
+      - docs/widget/animate/rotationtransition/
+      - docs/widget/animate/scaletransition/
+      - docs/widget/animate/sizetransition/
+      - docs/widget/animate/slidetransition/
+      - docs/widget/common/assetbundle/
+      - docs/widget/common/buttonbar/
+      - docs/widget/common/chip/
+      - docs/widget/common/container/
+      - docs/widget/common/divider/
+      - docs/widget/common/flatbutton/
+      - docs/widget/common/icon/
+      - docs/widget/common/iconbutton/
+      - docs/widget/common/image/
+      - docs/widget/common/listtile/
+      - docs/widget/common/placeholder/
+      - docs/widget/common/raisedbutton/
+      - docs/widget/common/rawimage/
+      - docs/widget/common/stepper/
+      - docs/widget/common/text/
+      - docs/widget/common/tooltip/
+      - docs/widget/vision/backdropfilter/
+      - docs/widget/vision/clipoval/
+      - docs/widget/vision/clippath/
+      - docs/widget/vision/cliprect/
+      - docs/widget/vision/custompaint/
+      - docs/widget/vision/decoratedbox/
+      - docs/widget/vision/fractionaltranslation/
+      - docs/widget/vision/mediaquery/
+      - docs/widget/vision/opacity/
+      - docs/widget/vision/rotatedbox/
+      - docs/widget/vision/theme/
+      - docs/widget/vision/transform/
       #- img/
   # To add assets to your application, add an assets section, like this:
   # assets:

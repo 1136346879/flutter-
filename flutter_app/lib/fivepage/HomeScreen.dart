@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/ToastShow.dart' as ToastUtil;
+import 'package:flutter_app/demoscrollview/nestedscrollview/index.dart';
+
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -11,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 final loginButton = FlatButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("您想提问吗");
+              
     },
     icon: Icon(
       Icons.edit,
@@ -18,8 +21,7 @@ final loginButton = FlatButton.icon(
       color: Colors.blue,
     ),
     label: Text('提问', style: TextStyle(color: Colors.blue, fontSize: 18.0)));
-
-Widget barSearch() {
+Widget barSearch(BuildContext context) {
   return new Row(
     children: <Widget>[
       Expanded(
@@ -47,12 +49,14 @@ Widget barSearch() {
 
 class LogoAppState extends State<HomeScreen> {
   var _visible = true;
+ 
   @override
   Widget build(BuildContext context) {
+ 
     //通过Opacity的透明度值来控制 widget显示和隐藏 这比在树中删除和添加widget效率更高
     return Scaffold(
         appBar: AppBar(
-          title: barSearch(),
+          title: barSearch(context),
           // centerTitle: true,
           backgroundColor: Colors.white,
         ),
@@ -65,6 +69,9 @@ class LogoAppState extends State<HomeScreen> {
                 child: new Center(
                   child: new GestureDetector(
                     onTap: () {
+                        // Navigator.push(context,
+              // MaterialPageRoute(builder: (BuildContext ctx) {
+                // return new Index();} ));
                       //每次点击文本就在隐藏和显示之间切换
                       _visible = _visible ? false : true;
                       setState(() {});

@@ -37,7 +37,7 @@ class Request {
   }
 
   static Dio createDio() {
-    var options = Options(
+    var options = BaseOptions(
       baseUrl: baseUrl,
       connectTimeout: 10000,
       receiveTimeout: 100000,

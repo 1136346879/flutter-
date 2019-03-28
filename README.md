@@ -1,4 +1,13 @@
 # flutter-
+		
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/Bottomtabbar.gif)	
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/TOpBar_listview_refresh_loadmore.gif)
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/banner_CarouselSlider.gif)
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/banner_list.gif)
+
+listview嵌套gridview（中部） （解决gridview拦截滑动事件）
+
+![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/listview+gridView.gif)
 flutter基础组件使用及插件引入
 		
 demo是如何一步一步搭建起来的

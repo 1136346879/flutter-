@@ -12,6 +12,7 @@ import 'package:flutter_app/pagedetail/feedbackDetail.dart';
 import 'package:flutter_app/pagedetail/welcomePage.dart';
 import 'package:flutter_app/everypage/every_page.dart';
 import 'package:flutter_app/me/me_page.dart';
+import 'package:flutter_app/test/tabbarDemo.dart';
 /**
  * 主页
  */
@@ -52,6 +53,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     super.initState();
     list
       ..add(HomeScreen())
+      // ..add(TabBarDemo())
       ..add(emile_screen())
       ..add(pages_screen())
       ..add(airplay_screen())
