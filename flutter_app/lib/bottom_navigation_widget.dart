@@ -161,11 +161,11 @@ class listView extends StatelessWidget{
       padding: EdgeInsets.all(0),
       children: <Widget>[
         UserAccountsDrawerHeader(
-          accountEmail: Text('abc@itcast.cn'),
-          accountName: Text('张三'),
+          accountEmail: Text('1136346879@qq.com'),
+          accountName: Text('汪栋邢'),
           currentAccountPicture: CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://images.gitee.com/uploads/91/465191_vsdeveloper.png?1530762316'),
+                'http://pic.qingting.fm/2018/0421/20180421072635816190.jpg%21800'),
           ),
           // 美化当前控件的
           decoration: BoxDecoration(
@@ -173,7 +173,7 @@ class listView extends StatelessWidget{
               image: DecorationImage(
                   fit: BoxFit.cover,
                   image: NetworkImage(
-                      'http://www.liulongbin.top:3005/images/bg1.jpg'))),
+                      'http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg'))),
         ),
         ListTile(
           onTap: (){

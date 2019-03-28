@@ -27,11 +27,11 @@ class shippingcar extends StatefulWidget {
 
 class movieListStates extends State<shippingcar>{
   // 默认显示第一页数据
-  int page = 1;
+  int page = 10;
   //透明度
  double navAlpha = 0;
   // 每页显示的数据条数
-  int pagesize = 10;
+  int pagesize = 20;
 
   // 电影列表数据
   var mlist = [];

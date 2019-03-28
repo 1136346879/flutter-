@@ -1,17 +1,14 @@
 # flutter-
-		
+直接看效果图，有用就可以fork下来，看看源码使用，麻烦你start一下，谢谢		
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/Bottomtabbar.gif)	
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/TOpBar_listview_refresh_loadmore.gif)
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/banner_CarouselSlider.gif)
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/banner_list.gif)
-
-listview嵌套gridview（中部） （解决gridview拦截滑动事件）
-
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/listview+gridView.gif)
+
 flutter基础组件使用及插件引入
 		
 demo是如何一步一步搭建起来的
-
 
 最初就是直接新建flutter项目，就会自动建立一个入门项目。（开始项目前，需先学习Dart语言）
 
