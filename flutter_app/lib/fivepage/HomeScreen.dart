@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/ToastShow.dart' as ToastUtil;
 import 'package:flutter_app/demoscrollview/nestedscrollview/index.dart';
 import 'package:flutter_app/utils/app_navigator.dart';
+import 'package:flutter_app/gridviewpage.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -29,19 +30,10 @@ final loginButton = FlatButton.icon(
     ),
     label: Text('toast提示', style: TextStyle(color: Colors.blue, fontSize: 14.0))
     );
-    final loginButton2 = FlatButton.icon(
-    onPressed: () {
-              ToastUtil.ToastShow().showTopToast("底部菜单栏展示");
-    },
-    icon: Icon(
-      Icons.edit,
-      color: Colors.blue,
-    ),
-    label: Text('底部菜单栏展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-    final loginButton3 = FlatButton.icon(
+  final loginButton3 = FlatButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("banner轮播图展示");
-              
+             
     },
     icon: Icon(
       Icons.edit,
@@ -60,25 +52,14 @@ final loginButton = FlatButton.icon(
     label: Text('网络图片及本地图片加载', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
     final loginButton5 = FlatButton.icon(
     onPressed: () {
-              ToastUtil.ToastShow().showTopToast("tabbarview切换联动页面切换");
-              
+              ToastUtil.ToastShow().showTopToast("就是本页面哦");
     },
     icon: Icon(
       Icons.edit,
       color: Colors.blue,
     ),
     label: Text('tabbarview切换联动页面切换', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-    final loginButton6 = FlatButton.icon(
-    onPressed: () {
-              ToastUtil.ToastShow().showTopToast("gridview展示");
-              
-    },
-    icon: Icon(
-      Icons.edit,
-      color: Colors.blue,
-    ),
-    label: Text('gridview展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-    final loginButton7 = FlatButton.icon(
+   final loginButton7 = FlatButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("网络访问接口解析及数据展示");
               
@@ -91,7 +72,13 @@ final loginButton = FlatButton.icon(
     final loginButton8 = FlatButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("页面之间跳转，带参数和不带参数");
-              
+                 // Navigator.push(context,
+                //     MaterialPageRoute(builder: (BuildContext ctx) {
+                //       return TabBarViewMe(
+                //         id: '27110296',
+                //         title: '无名之辈',
+                //       );
+                //     }));
     },
     icon: Icon(
       Icons.edit,
@@ -108,16 +95,6 @@ final loginButton = FlatButton.icon(
     //   color: Colors.blue,
     // ),
     // label: Text('网络图片展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-
-final loginButton0 = FlatButton.icon(
-    onPressed: () {
-              ToastUtil.ToastShow().showTopToast("listview和gridview滑动事件冲突解决");
-    },
-    icon: Icon(
-      Icons.edit,
-      color: Colors.blue,
-    ),
-    label: Text('listview和gridview滑动事件冲突解决', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
 
 Widget barSearch(BuildContext context) {
   return new Row(
@@ -166,15 +143,15 @@ class LogoAppState extends State<HomeScreen> {
                  child: ListView(
           children: <Widget>[
               loginButton1,
-              loginButton2,
+              flatButton2(),
               loginButton3,
               loginButton4,
               loginButton5,
-              loginButton6,
+              flatButton6(context),
               loginButton7,
               loginButton8,
               // loginButton9,
-              loginButton0,
+              flatButton0(context),
               flatButton(context)
             // Text('首页',),
             // new Opacity(
@@ -205,12 +182,45 @@ class LogoAppState extends State<HomeScreen> {
 
          
   }
+  
+ FlatButton flatButton6(BuildContext context) {
+    return    FlatButton.icon(
+    onPressed: () {
+              ToastUtil.ToastShow().showTopToast("gridview展示");
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext ctx) {
+                      return gridviewpage();
+                    }));
+    },
+    icon: Icon(
+      Icons.edit,
+      color: Colors.blue,
+    ),
+    label: Text('gridview展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
+   
+  }
+ FlatButton flatButton0(BuildContext context) {
+    return FlatButton.icon(
+    onPressed: () {
+              ToastUtil.ToastShow().showTopToast("listview和gridview滑动事件冲突解决");
+                 Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext ctx) {
+                      return gridviewpage();
+                    }));
+    },
+    icon: Icon(
+      Icons.edit,
+      color: Colors.blue,
+    ),
+    label: Text('listview和gridview滑动事件冲突解决', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
 
+  }
   FlatButton flatButton(BuildContext context) {
     return FlatButton.icon(
   onPressed: () {
             ToastUtil.ToastShow().showTopToast("webview加载");
                AppNavigator.pushWeb(context, 'https://github.com/1136346879/flutter-', 'Github');
+                 this.openEnvSelectMenu();
   },
   icon: Icon(
     Icons.edit,
@@ -218,5 +228,74 @@ class LogoAppState extends State<HomeScreen> {
   ),
   label: Text('webview加载', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
   }
+ FlatButton flatButton2() {
+    return FlatButton.icon(
+    onPressed: () {
+              ToastUtil.ToastShow().showTopToast("底部菜单栏展示");
+                 this.openEnvSelectMenu();
 
+    },
+    icon: Icon(
+      Icons.edit,
+      color: Colors.blue,
+    ),
+    label: Text('底部菜单栏展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
+   
+  }
+ /**
+   * 环境选择
+   */
+  void openEnvSelectMenu() async {
+    await showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return Container(
+          child: Wrap(
+            children: <Widget>[
+              ListTile(
+                leading: Icon(Icons.label_outline),
+                title: Text(
+                  '中文',
+                ),
+                onTap: () {
+               this.popShort('切换成功',Colors.red[300],25.0,Colors.blue[300]);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.label_outline),
+                title: Text('英文'),
+                onTap: () {
+              this.popShort('切换成功',Colors.red[300],25.0,Colors.blue[300]);
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  /**
+ * message: 提示语 成功了
+ * textcolor： 文字颜色 Colors.blue
+ * fontsize：文字大小 25.0
+ * backgroundColor： 背景颜色 Colors.red[300]
+ */
+  void popShort([message,textColor,fontSize,backgroundColor]) {
+    Navigator.pop(context);
+    if (message != null) {
+      Scaffold.of(context).showSnackBar(new SnackBar(
+        duration:const Duration(milliseconds: 1000),
+        content: new Text(message,style: TextStyle(color: textColor,fontSize: fontSize)),
+        backgroundColor: backgroundColor,
+        // animation: ,
+        // action: new SnackBarAction(
+        // label: '取消',
+        //     onPressed: () {
+        //         // do something to undo
+        //     }
+        //  ),
+      ));
+    }
+  }
 }

@@ -78,13 +78,13 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                 ToastShow().showLongToast('搜索');
 
                 // 跳转到电影列表页
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (BuildContext ctx) {
-                //       return TabBarViewMe(
-                //         id: '27110296',
-                //         title: '无名之辈',
-                //       );
-                //     }));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext ctx) {
+                      return TabBarViewMe(
+                        id: '27110296',
+                        title: '无名之辈',
+                      );
+                    }));
               },
             )
           ],

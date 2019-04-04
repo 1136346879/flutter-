@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/first.dart' as first;
 import 'package:flutter_app/me/me_page.dart';
 
-class second  extends StatelessWidget{
-   second({Key key})
+class gridviewpage  extends StatelessWidget{
+   gridviewpage({Key key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class second  extends StatelessWidget{
       child: MaterialApp(
         title: 'nihao',
         theme: ThemeData.dark(),
-        home: first.MyHomePage(),
+        home: MePage(),
       ),
     );
   }
