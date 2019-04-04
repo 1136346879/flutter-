@@ -32,7 +32,7 @@ class ToastShow extends StatelessWidget{
   showTopToast(String showString) {
     Fluttertoast.showToast(
       msg: showString,
-      toastLength: Toast.LENGTH_LONG,
+      toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.TOP,
       timeInSecForIos: 1,
       fontSize: 16,
