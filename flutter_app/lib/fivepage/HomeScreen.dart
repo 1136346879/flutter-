@@ -3,6 +3,7 @@ import 'package:flutter_app/ToastShow.dart' as ToastUtil;
 import 'package:flutter_app/demoscrollview/nestedscrollview/index.dart';
 import 'package:flutter_app/utils/app_navigator.dart';
 import 'package:flutter_app/gridviewpage.dart';
+import 'package:flutter_app/shoppingcarpage.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -30,16 +31,7 @@ final loginButton = FlatButton.icon(
     ),
     label: Text('toast提示', style: TextStyle(color: Colors.blue, fontSize: 14.0))
     );
-  final loginButton3 = FlatButton.icon(
-    onPressed: () {
-              ToastUtil.ToastShow().showTopToast("banner轮播图展示");
-             
-    },
-    icon: Icon(
-      Icons.edit,
-      color: Colors.blue,
-    ),
-    label: Text('banner轮播图展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
+
     final loginButton4 = FlatButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("网络图片及本地图片加载");
@@ -144,7 +136,7 @@ class LogoAppState extends State<HomeScreen> {
           children: <Widget>[
               loginButton1,
               flatButton2(),
-              loginButton3,
+              flatButton3(),
               loginButton4,
               loginButton5,
               flatButton6(context),
@@ -240,6 +232,22 @@ class LogoAppState extends State<HomeScreen> {
       color: Colors.blue,
     ),
     label: Text('底部菜单栏展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
+   
+  }
+ FlatButton flatButton3() {
+    return  FlatButton.icon(
+    onPressed: () {
+              ToastUtil.ToastShow().showTopToast("banner轮播图展示");
+              Navigator.push(context,
+                    MaterialPageRoute(builder: (BuildContext ctx) {
+                      return shoppingcarpage();
+                    }));
+    },
+    icon: Icon(
+      Icons.edit,
+      color: Colors.blue,
+    ),
+    label: Text('banner轮播图展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
    
   }
  /**

@@ -1,5 +1,5 @@
 # flutter-
-直接看效果图，有用就可以fork下来，看看源码使用，麻烦你start一下，谢谢	
+直接看效果图，有用就可以fork和start下来，看看源码使用，麻烦你start一下，谢谢	
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/gif_home.gif)		
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/Bottomtabbar.gif)	
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/TOpBar_listview_refresh_loadmore.gif)
