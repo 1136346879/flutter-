@@ -25,6 +25,7 @@ class _MovieDetailState extends State<MovieDetail> {
 //      body:Text('电影Id为：${widget.id}'),
 //      backgroundColor: Colors.red,
       body: Center(
+
         child: Container(
             height: 200,
             decoration: BoxDecoration(
@@ -36,6 +37,17 @@ class _MovieDetailState extends State<MovieDetail> {
             //
             child: Row(
               children: <Widget>[
+
+//            Positioned(
+//            childImage.network('http://yt.cxicst.com/timg.png),
+//            alignment: Alignment. centerLeft
+//            child: Container(
+//                margin: EdgeInsets only (left: 5)
+//            width:ScenAdapter. width(38)
+//          height:ScenAdapter. width(38)
+//        child:Image.network('http://yt.cxicst.com/top.png')
+//    )
+//    ),
 //                new DecoratedBox(
 //                  decoration: new BoxDecoration(
 //                    image: new DecorationImage(
@@ -49,12 +61,19 @@ class _MovieDetailState extends State<MovieDetail> {
             Image.asset('img/flutter_get_package.png', width: 0, height: 180, fit: BoxFit.cover),
                 Image.network('https://images.gitee.com/uploads/91/465191_vsdeveloper.png?1530762316',
                     width: 130, height: 180, fit: BoxFit.cover),
+
+//            Container( margin: EdgeInsets only (left: 5)
+//                    width:ScenAdapter. width(38)
+//                  height:ScenAdapter. width(38)
+//                child:Image.network('http://yt.cxicst.com/top.png')
+//            )
                 Container(
                   height: 200,
                   padding: EdgeInsets.only(left:10.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
+
                     children: <Widget>[
                       Text('电影名字：${widget.title}京东if就傲娇的搜啊都安静m',overflow: TextOverflow.ellipsis,
                       ),
@@ -65,9 +84,18 @@ class _MovieDetailState extends State<MovieDetail> {
                     ],
                   ),
                 )
+
               ],
+
             )),
       ),
     );
   }
 }
+
+
+
+
+
+
+

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/first.dart' as lib;
 import 'package:flutter_app/bottom_navigation_widget.dart';
 
+/**
+ * App主入口
+ */
 void main() => runApp(MyApp());
-
 //void main() => runApp(new UiTest());
 
 //class UiTest extends StatelessWidget {
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
       ),
 //      home: MyHomePage(title: 'Flutter Demo Home Page - test'),
 //      home: lib.MyHomePage(title: 'Flutter Demo Home Page - test'),
-        home:BottomNavigationWidget(),
+      home: BottomNavigationWidget(), //app  首页框架搭建
     );
   }
 }

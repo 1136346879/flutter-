@@ -37,7 +37,7 @@ class imagePageState extends State<pages_screen>{
 @override
   void dispose() {
     super.dispose();
-    mController.dispose();
+//    mController.dispose();
   }
   @override
   Widget build(BuildContext context) {
