@@ -19,16 +19,14 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  fluttertoast: ^2.1.1
+  fluttertoast: ^4.0.0
   dio: ^2.0.14
-  # dio: ^1.0.9 
   fluro: ^1.4.0
   rxdart: ^0.18.1
   scoped_model: ^1.0.1
-  # scoped_model: ^0.3.0
   http: ^0.12.0
   english_words: ^3.1.0
-  cached_network_image: ^0.5.1
+  cached_network_image: ^2.0.0
   carousel_slider: ^1.0.1
   flutter_webview_plugin: ^0.3.0+2
   #share: ^0.5.3
@@ -39,7 +37,7 @@ dependencies:
   share: ^0.6.0+1 #社会化分享
   pull_to_refresh: ^1.1.6 #加载更多
   shared_preferences: ^0.4.2 #简单数据存储
-  intl: ^0.15.7
+  intl: ^0.16.0
   flutter_screenutil: ^0.5.1
   flutter_localizations:
         sdk: flutter
@@ -62,9 +60,9 @@ flutter:
   uses-material-design: true
   assets:
       - mock/
-      - locale/
-      - assets/
-      - assets/imgs/
+#      - locale/
+#      - assets/
+#      - assets/imgs/
       - docs/widget/scrollview/customscrollview/
       - docs/widget/scrollview/gridview/
       - docs/widget/scrollview/listview/
