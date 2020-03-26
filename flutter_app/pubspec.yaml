@@ -39,6 +39,7 @@ dependencies:
   shared_preferences: ^0.4.2 #简单数据存储
   intl: ^0.16.0
   flutter_screenutil: ^0.5.1
+  flutter_swiper : ^1.1.4  #轮播图
   flutter_localizations:
         sdk: flutter
 

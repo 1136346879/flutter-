@@ -1,4 +1,6 @@
 # flutter-
+项目已经迁移至androidx，flutter-SDK已升级至最新稳定版本 v1.12.13+hotfix.8
+
 直接看效果图，有用就可以fork和start下来，看看源码使用，麻烦你start一下，谢谢	
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/gif_home.gif)		
 ![image](https://github.com/1136346879/flutter-/blob/master/gifStorage/Bottomtabbar.gif)	
@@ -24,16 +26,17 @@ flutter 插件引入： （可以看项目中如何引入的）
 					  # The following adds the Cupertino Icons font to your application.
 					  # Use with the CupertinoIcons class for iOS style icons.
 					  cupertino_icons: ^0.1.2  // 图标引入插件
-					  fluttertoast: ^2.1.1  //toast 插件
+					  fluttertoast:  ^4.0.0  //toast 插件
 					  dio: ^1.0.9   // 网络访问插件（post，get等）
 					  rxdart: ^0.18.1  
 					  scoped_model: ^0.3.0
 					  http: ^0.12.0  //http 访问插件
 					  english_words: ^3.1.0
-					  cached_network_image: ^0.5.1   //  图片展示及缓存 插件
+					  cached_network_image: ^2.0.0   //  图片展示及缓存 插件
 					  carousel_slider: ^1.0.1
 					  flutter_webview_plugin: ^0.3.0+2  // webview 插件
 					  share: ^0.5.3 
+					   intl: ^0.16.0
 					  flutter_localizations:
 							sdk: flutter	
 本地文件（图片和json数据）引入：（可以看项目中如何引入的）
@@ -91,4 +94,4 @@ flutter开发中遇到的
 		1.0 版本的 caffold组件是不需要加padding
 		升级之后  caffold组件必须加上padding，项目才能不报错，
 		但是升级之后，遇到一个问题： 而我引入的webview插件不能兼容，插件的Scaffold组件没有升级呢，没有padding
-		所以我这边又换回去了flutter Sdk 1.2版本
+		所以我这边又换回去了flutter Sdk  v1.12.13+hotfix.8版本

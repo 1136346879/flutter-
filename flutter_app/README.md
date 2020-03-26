@@ -1,7 +1,5 @@
 # flutter_app
 
-
-123
 A new Flutter application.
 
 ## Getting Started
