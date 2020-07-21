@@ -85,9 +85,10 @@ class IndexState extends State<Index> {
       this.model = model;
       return Scaffold(
         appBar: AppBar(
-          /* title: Header.Index(
-            this.title,
-          ), */
+           title: Header.Index(
+//            this.title,
+            "我是titile",
+          ),
           actions: this.getActions(
             context,
           ),

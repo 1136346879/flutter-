@@ -1,18 +1,25 @@
+/**
+ * 《Flutter从入门到进阶-实战携程网App》
+ * 课程地址：
+ * https://coding.imooc.com/class/321.html
+ * 课程代码、文档：
+ * https://git.imooc.com/coding-321/
+ * 课程辅导答疑区：
+ * http://coding.imooc.com/learn/qa/321.html
+ */
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
+
 const APPBAR_SCROLL_OFFSET = 100;
 /**
  * 滑动topbar 渐隐渐现
  */
-class emile_screen extends StatefulWidget {
+class OpacityPage extends StatefulWidget {
   @override
-  _state_emile_screen createState() {
-    return _state_emile_screen();
-  }
+  _OpacityPageState createState() => _OpacityPageState();
 }
 
-class  _state_emile_screen extends State<emile_screen> {
-
+class _OpacityPageState extends State<OpacityPage> {
   List _imageUrls = [
     'http://pages.ctrip.com/commerce/promote/20180718/yxzy/img/640sygd.jpg',
     'https://dimg04.c-ctrip.com/images/700u0r000000gxvb93E54_810_235_85.jpg',
@@ -86,7 +93,7 @@ class  _state_emile_screen extends State<emile_screen> {
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.only(top: 20),
-                  child: Text('Email'),
+                  child: Text('首页'),
                 ),
               ),
             ),

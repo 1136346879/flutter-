@@ -53,7 +53,7 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     super.initState();
     list
       ..add(HomeScreen())
-      // ..add(TabBarDemo())
+//       ..add(TabBarDemo())
       ..add(emile_screen())
       ..add(pages_screen())
       ..add(airplay_screen())
