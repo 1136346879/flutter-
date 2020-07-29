@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Copyright Zygomatic.nl -->
+	<meta charset="utf-8">
+	<title>Zuma Legend</title>
+	<meta name="date" content="2019-10-14">
+	<meta name="gameCats" content="Match3">
+	<meta property="og:type" content="game">
+	<meta property="og:url" content="https://cdn.htmlgames.com/ZumaLegend/">
+	<meta property="og:title" content="Zuma Legend">
+	<meta property="og:image" content="https://cdn.htmlgames.com/ZumaLegend/img/icon/image-300x200.jpg">
+	<meta property="og:description" content="Tap to shoot a ball up and create groups of 3 or more of the same colored balls to remove them from the game. Remove all balls before they reach the exit. Click or tap the shooter to change color or to switch the position of the shooter.">
+	<meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,width=device-width,viewport-fit=cover">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="theme-color" content="#000">
+	<link rel="manifest" href="manifest.json">
+	<link rel="shortcut icon" sizes="196x196" href="img/icon/icon-196x196.png">
+	<link rel="apple-touch-icon" href="img/icon/icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="img/icon/icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="img/icon/icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="img/icon/icon-152x152.png">	
+
+	<link rel="stylesheet" type="text/css" href="css/game.css">
+
+	<script src="js/ThirdParty.js"></script>
+	<script src="js/game.js"></script>
+</head>
+<body>
+<div class="desc">
+	<h1>Zuma Legend</h1>
+	<p>Tap to shoot a ball up and create groups of 3 or more of the same colored balls to remove them from the game. Remove all balls before they reach the exit. Click or tap the shooter to change color or to switch the position of the shooter.</p>
+</div>
+
+<div id="gameContainer"></div> 
+
+<div id="rotateHint">
+   <b>Please rotate your device</b>
+   <img class="rotate" src="img/rotate.png" alt="Please rotate your device">
+   <img id="rotateClose" src="img/close.png" alt="X">
+</div>
+
+<script>
+	var gameName = document.title,
+    gameContainer = document.getElementById('gameContainer');
+	var gameMask = null;
+	function orderInit(a){
+		switch(a) {
+			case 1: loadRec.creatloading(); break;
+			case 2: GameMenu.showMenu(); break;
+			case 3: GameHelp.showHelp(); break;
+			case 4: GamePlay.showPlay(); break;
+			case 5: GameOver.showOver(); break;
+			case 6: gameMap.showMap(); break;
+		}
+	}
+	GameLib.init(gameName, 800, 480);
+</script>
+<noscript>
+This game needs Javascript. Click here for <a href="//www.match3games.com">Zuma games</a>.
+</noscript>
+</body>
+</html>

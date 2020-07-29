@@ -199,13 +199,13 @@ class listView extends StatelessWidget{
         ),
         ListTile(
           onTap: () {
-            ToastShow().showShortToast('我要发布');
+            ToastShow().showShortToast('flutter-widget基础');
             Navigator.pop(context);
             Navigator.push(context, MaterialPageRoute(builder: (BuildContext ctx){
               return every_page(key);
             }));
           },
-          title: Text('我要发布'),
+          title: Text('flutter-widget基础'),
           trailing: Icon(Icons.send),
         ),
         ListTile(

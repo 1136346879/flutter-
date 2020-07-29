@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:share/share.dart';
 
@@ -14,12 +15,26 @@ class WebPage extends StatefulWidget {
 
 class _WebPageState extends State<WebPage> {
   @override
+  void initState() {
+    super.initState();
+    loadJS('ko/sw.js');
+    loadJS('ko/js/game.js');
+    loadJS('ko/js/ThirdParty.js');
+  }
+  final flutterWebviewPlugin = new FlutterWebviewPlugin();
+  @override
   Widget build(BuildContext context) {
     return WebviewScaffold(
       url: this.widget.url,
+        withZoom:  true,
+        withJavascript: true,
+        allowFileURLs:true,
+        withLocalStorage:true,
+        ignoreSSLErrors:true,
+//      withLocalUrl: true,
       appBar: new AppBar(
         title: new Text(this.widget.title ?? 'Meandni'),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.red,
         actions: <Widget>[
           GestureDetector(
             onTap: () {
@@ -33,5 +48,16 @@ class _WebPageState extends State<WebPage> {
         ],
       ),
     );
+  }
+  Future<String> loadJS(String name) async {
+    print("laod js");
+    var givenJS = rootBundle.loadString(name);
+    return givenJS.then((String js) {
+      flutterWebviewPlugin.onStateChanged.listen((viewState) async {
+        if (viewState.type == WebViewState.finishLoad) {
+          flutterWebviewPlugin.evalJavascript(js);
+        }
+      });
+    });
   }
 }

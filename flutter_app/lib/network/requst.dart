@@ -41,7 +41,7 @@ class Request {
       baseUrl: baseUrl,
       connectTimeout: 10000,
       receiveTimeout: 100000,
-      contentType: ContentType.json,
+      contentType: ContentType.json.toString(),
     );
     return Dio(options);
   }

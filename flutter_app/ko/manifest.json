@@ -1,0 +1,31 @@
+{
+	"name": "Zuma Legend",
+	"short_name": "Zuma Legend",
+	"icons": [
+		{
+			"src": "img/icon/icon-76x76.png",
+			"sizes": "76x76",
+			"type": "image/png"
+		},
+		{
+			"src": "img/icon/icon-120x120.png",
+			"sizes": "120x120",
+			"type": "image/png"
+		},
+		{
+			"src": "img/icon/icon-152x152.png",
+			"sizes": "152x152",
+			"type": "image/png"
+		},
+		{
+			"src": "img/icon/icon-196x196.png",
+			"sizes": "196x196",
+			"type": "image/png"
+		}
+	],
+	"start_url": "index.html",
+	"display": "standalone",
+	"orientation": "landscape",
+	"theme_color": "#000000",
+	"background_color": "#000000"
+}

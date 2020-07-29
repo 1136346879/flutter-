@@ -20,7 +20,6 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   fluttertoast: ^4.0.0
-  dio: ^2.0.14
   fluro: ^1.4.0
   rxdart: ^0.18.1
   scoped_model: ^1.0.1
@@ -36,10 +35,13 @@ dependencies:
   flutter_spinkit: ^3.0.0 #加载指示器合集
   share: ^0.6.0+1 #社会化分享
   pull_to_refresh: ^1.1.6 #加载更多
-  shared_preferences: ^0.4.2 #简单数据存储
   intl: ^0.16.0
   flutter_screenutil: ^0.5.1
   flutter_swiper : ^1.1.4  #轮播图
+  multi_image_picker: ^4.6.1
+  x5_webview: ^0.2.2
+   # leancloud  数据存储 已经包含shared_preferences #简单数据存储  dio: ^2.0.14 json_serializable: ^2.0.0
+  leancloud_storage: ^0.2.9
   flutter_localizations:
         sdk: flutter
 
@@ -47,7 +49,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -61,6 +62,13 @@ flutter:
   uses-material-design: true
   assets:
       - mock/
+      - ko/
+      - ko/css/
+      - ko/img/
+      - ko/img/icon/
+      - ko/img/mahjong/
+      - ko/js/
+      - ko/sounds/
 #      - locale/
 #      - assets/
 #      - assets/imgs/
@@ -173,6 +181,7 @@ flutter:
       - docs/widget/vision/rotatedbox/
       - docs/widget/vision/theme/
       - docs/widget/vision/transform/
+      -
       #- img/
   # To add assets to your application, add an assets section, like this:
   # assets:

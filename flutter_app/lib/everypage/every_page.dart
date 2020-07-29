@@ -67,7 +67,7 @@ class every_pageState extends State<every_page>{
 //          splashColor: Colors.white70,
 //          accentColor:  Color.fromRGBO(3, 54, 255, 1.0),
 //        )
-      title: 'nihao',
+      title: 'widget_common',
       theme: ThemeData.dark(),
     );
   }

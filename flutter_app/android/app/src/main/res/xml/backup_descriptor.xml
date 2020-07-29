@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- 数据备份规则 Exclude specific shared preferences that contain GCM registration Id -->
+    <!-- 忽略此数据， 不备份此数据库 -->
+    <exclude
+        domain="database"
+        path="fsyuncai_db.db" />
+</full-backup-content>

@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/ToastShow.dart' as ToastUtil;
 import 'package:flutter_app/demoscrollview/nestedscrollview/index.dart';
 import 'package:flutter_app/utils/app_navigator.dart';
@@ -6,6 +9,7 @@ import 'package:flutter_app/gridviewpage.dart';
 import 'package:flutter_app/shoppingcarpage.dart';
 import 'package:flutter_app/banner/pagination.dart';
 import 'package:flutter_app/banner/commont_banner.dart';
+import 'package:x5_webview/x5_sdk.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -129,7 +133,7 @@ class LogoAppState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
- 
+
     //通过Opacity的透明度值来控制 widget显示和隐藏 这比在树中删除和添加widget效率更高
     return Scaffold(
         appBar: AppBar(
@@ -219,9 +223,12 @@ class LogoAppState extends State<HomeScreen> {
   FlatButton flatButton(BuildContext context) {
     return FlatButton.icon(
   onPressed: () {
+//    _initX5Webview();
             ToastUtil.ToastShow().showTopToast("webview加载");
-               AppNavigator.pushWeb(context, 'https://github.com/1136346879/flutter-', 'Github');
-                 this.openEnvSelectMenu();
+//               AppNavigator.pushWeb(context, 'https://github.com/1136346879/flutter-', 'Github');
+               AppNavigator.pushWeb(context, 'ko/index.html', 'Github');
+//               AppNavigator.pushWeb(context, 'ko/private_policy.html', 'Github');
+//                 this.openEnvSelectMenu();
   },
   icon: Icon(
     Icons.edit,
@@ -314,5 +321,19 @@ class LogoAppState extends State<HomeScreen> {
         //  ),
       ));
     }
+  }
+
+  void _initX5Webview() async{
+    var isOk = false;
+    if(!isOk){
+      isOk= await X5Sdk.init();
+    }
+    var fileS = await rootBundle.loadString("ko/index.html");
+    var url = Uri.dataFromString(fileS,
+        mimeType: 'text/html',
+        encoding: Encoding.getByName('utf-8'),
+    )
+        .toString();
+    X5Sdk.openWebActivity(url, title: "本地html示例");
   }
 }
