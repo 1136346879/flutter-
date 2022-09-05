@@ -8,9 +8,9 @@ class RadioDemo extends StatefulWidget {
 class _RadioDemoState extends State<RadioDemo> {
   int _radioGroupA = 0;
   
-  void _handleRadioValueChanged(int value) {
+  void _handleRadioValueChanged(int? value) {
     setState(() {
-      _radioGroupA = value;
+      _radioGroupA = value!;
     });
   }
 

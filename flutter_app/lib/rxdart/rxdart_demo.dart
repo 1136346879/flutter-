@@ -21,7 +21,7 @@ class RxDartDemoHome extends StatefulWidget {
 }
 
 class _RxDartDemoHomeState extends State<RxDartDemoHome> {
-  PublishSubject<String> _textFieldSubject;
+  PublishSubject<String>? _textFieldSubject;
 
   @override
   void initState() {
@@ -29,7 +29,7 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
 
     _textFieldSubject = PublishSubject<String>();
 
-    _textFieldSubject
+    _textFieldSubject!
       // .map((item) => 'item: $item')
       // .where((item) => item.length > 9)
       .debounce(Duration(milliseconds: 500))
@@ -60,7 +60,7 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
   @override
   void dispose() {
     super.dispose();
-    _textFieldSubject.close();
+    _textFieldSubject!.close();
   }
 
   @override
@@ -71,10 +71,10 @@ class _RxDartDemoHomeState extends State<RxDartDemoHome> {
       ),
       child: TextField(
         onChanged: (value) {
-          _textFieldSubject.add('input: $value');
+          _textFieldSubject!.add('input: $value');
         },
         onSubmitted: (value) {
-          _textFieldSubject.add('submit: $value');
+          _textFieldSubject!.add('submit: $value');
         },
         decoration: InputDecoration(
           labelText: 'Title',

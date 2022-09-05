@@ -9,11 +9,11 @@ class TabBarDemo extends StatefulWidget {
 
 class TabBarDemoState extends State<TabBarDemo>
     with SingleTickerProviderStateMixin {
-  TabController _tabController;
+  TabController? _tabController;
 
   @override
   void dispose() {
-    _tabController.dispose();
+    _tabController!.dispose();
     super.dispose();
   }
 

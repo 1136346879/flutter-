@@ -26,7 +26,7 @@ class NavigatorDemo extends StatelessWidget {
 }
 
 class Page extends StatelessWidget {
-  final String title;
+  final String? title;
 
   Page({
     this.title
@@ -36,7 +36,7 @@ class Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(title!),
         elevation: 0.0,
       ),
       floatingActionButton: FloatingActionButton(

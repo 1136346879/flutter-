@@ -40,12 +40,12 @@ class RegisterForm extends StatefulWidget {
 
 class RegisterFormState extends State<RegisterForm> {
   final registerFormKey = GlobalKey<FormState>();
-  String username, password;
+  String? username, password;
   bool autovalidate = false;
 
   void submitRegisterForm() {
-    if (registerFormKey.currentState.validate()) {
-      registerFormKey.currentState.save();
+    if (registerFormKey.currentState!.validate()) {
+      registerFormKey.currentState!.save();
       debugPrint('username: $username');
       debugPrint('password: $password');
       var userInfo = _register();
@@ -57,7 +57,7 @@ class RegisterFormState extends State<RegisterForm> {
               context,
               MaterialPageRoute(
                 // num传给下一级
-                builder: (context) => Login(usernameLogin:username,passwordLogin:password),
+                builder: (context) => Login(usernameLogin:username!,passwordLogin:password!),
               ));
         }
       });
@@ -89,14 +89,14 @@ class RegisterFormState extends State<RegisterForm> {
     if (value.isEmpty) {
       return 'Username is required.';
     }
-    return null;
+    return '';
   }
 
   String validatePassword(value) {
     if (value.isEmpty || value.toString().length < 6) {
       return '密码不能少于6位';
     }
-    return null;
+    return '';
   }
 
   @override
@@ -114,7 +114,6 @@ class RegisterFormState extends State<RegisterForm> {
               username = value;
             },
             validator: validateUsername,
-            autovalidate: autovalidate,
           ),
           TextFormField(
             obscureText: true,
@@ -127,8 +126,6 @@ class RegisterFormState extends State<RegisterForm> {
               password = value;
             },
             validator: validatePassword,
-            //提示
-            autovalidate: autovalidate,
           ),
           SizedBox(
             height: 32.0,

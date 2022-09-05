@@ -25,7 +25,7 @@ class pages_screen extends StatefulWidget{
   }
 }
 class imagePageState extends State<pages_screen>{
-  TabController mController;
+  TabController? mController;
   @override
   void initState() {
     super.initState();

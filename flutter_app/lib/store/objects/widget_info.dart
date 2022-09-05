@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 class ItemInfo extends Object {
-  int code;
-  String title;
-  Widget widget;
-  String webviewTitle;
+  int? code;
+  String? title;
+  Widget? widget;
+  String? webviewTitle;
 
   ItemInfo({this.code, this.title, this.widget, this.webviewTitle});
 
@@ -16,10 +16,10 @@ class ItemInfo extends Object {
 }
 
 class ItemListInfo {
-  String typeName;
-  String nameSpaces;
-  int code;
-  List widgetList;
+  String? typeName;
+  String? nameSpaces;
+  int? code;
+  List? widgetList;
 
   ItemListInfo({ this.typeName, this.nameSpaces, this.code, this.widgetList});
 

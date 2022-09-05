@@ -12,7 +12,7 @@ class FourthPage extends StatefulWidget{
 }
 
 class FourthPageStatus extends State<FourthPage> with TickerProviderStateMixin{
-  StreamController<SlideUpdate> slideUpdateStream;
+  late StreamController<SlideUpdate> slideUpdateStream;
   FourthPageStatus(){
 
      slideUpdateStream = StreamController<SlideUpdate>();

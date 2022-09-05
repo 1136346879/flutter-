@@ -6,13 +6,13 @@ part 'comment.g.dart';
 
 @JsonSerializable()
 class Comment {
-  User user;
-  String content;
-  String creatDateStr;
-  int niceCount;
-  String songId;
+  User? user;
+  String? content;
+  String? creatDateStr;
+  int? niceCount;
+  String? songId;
   @JsonKey(name: '_id', nullable: true)
-  String id;
+  String? id;
 
   Comment({this.user, this.content, this.creatDateStr, this.niceCount, this.songId});
 

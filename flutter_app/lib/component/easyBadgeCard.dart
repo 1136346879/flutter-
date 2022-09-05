@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
 class EasyBadgeCard extends StatefulWidget {
-  final Function onTap;
-  final Color leftBadge;
-  final Color prefixIconColor;
-  final Color suffixIconColor;
-  final String title;
-  final String description;
-  final IconData prefixIcon;
-  final IconData suffixIcon;
-  final Color backgroundColor;
-  final Color titleColor;
-  final Color descriptionColor;
-  final Color rightBadge;
+  final Function()? onTap;
+  final Color? leftBadge;
+  final Color? prefixIconColor;
+  final Color? suffixIconColor;
+  final String? title;
+  final String? description;
+  final IconData? prefixIcon;
+  final IconData? suffixIcon;
+  final Color? backgroundColor;
+  final Color? titleColor;
+  final Color? descriptionColor;
+  final Color? rightBadge;
 
   const EasyBadgeCard(
-      {Key key,
+      {Key? key,
       this.onTap,
       this.title,
       this.description,
@@ -91,7 +91,7 @@ class EasyBadgeCardState extends State<EasyBadgeCard> {
                     (this.widget.title != null)
                         ? Container(
                             child: Text(
-                              this.widget.title,
+                              this.widget.title!,
                               style: TextStyle(
                                   color: (this.widget.titleColor != null)
                                       ? this.widget.titleColor
@@ -104,7 +104,7 @@ class EasyBadgeCardState extends State<EasyBadgeCard> {
                     (this.widget.description != null)
                         ? Container(
                             child: Text(
-                              this.widget.description,
+                              this.widget.description!,
                               style: TextStyle(
                                   fontWeight: FontWeight.w100,
                                   fontSize: 10.0,

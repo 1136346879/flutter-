@@ -8,11 +8,11 @@ import '../ToastShow.dart';
  *   login页面
  */
 class Login extends StatelessWidget {
-  final String usernameLogin;
-  final String passwordLogin;
+  final String? usernameLogin;
+  final String? passwordLogin;
 
   Login({
-    Key key,
+    Key? key,
     this.usernameLogin,
     this.passwordLogin,
   }) : super(key: key);
@@ -34,7 +34,7 @@ class Login extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              LoginForm(usernameL: usernameLogin, passwordL: passwordLogin),
+              LoginForm(usernameL: usernameLogin!, passwordL: passwordLogin!),
             ],
           ),
         ),
@@ -44,8 +44,8 @@ class Login extends StatelessWidget {
 }
 
 class LoginForm extends StatefulWidget {
-  String usernameL;
-  String passwordL;
+  String? usernameL;
+  String? passwordL;
 
   LoginForm({
     this.usernameL,
@@ -63,8 +63,8 @@ class LoginState extends State<LoginForm> {
   bool autovalidate = false;
 
   void submitRegisterForm() {
-    if (registerFormKey.currentState.validate()) {
-      registerFormKey.currentState.save();
+    if (registerFormKey.currentState!.validate()) {
+      registerFormKey.currentState!.save();
       debugPrint('username: $username');
       debugPrint('password: $password');
       var userInfoLogin = _login();
@@ -74,9 +74,9 @@ class LoginState extends State<LoginForm> {
           "username": username,
           "password": password
         };
-        AppConfig.userTools.setUserData(map).then((bool) {
+        AppConfig.userTools!.setUserData(map)!.then((bool) {
           ToastShow().showShortToast("用户信息存储 $bool");
-          Navigator.pop(context, it.username);
+          Navigator.pop(context, it!.username);
         });
       });
       Scaffold.of(context).showSnackBar(SnackBar(
@@ -93,14 +93,14 @@ class LoginState extends State<LoginForm> {
     if (value.isEmpty) {
       return 'Username is required.';
     }
-    return null;
+    return '';
   }
 
   String validatePassword(value) {
     if (value.isEmpty || value.toString().length < 6) {
       return '密码不能少于6位';
     }
-    return null;
+    return '';
   }
 
   @override
@@ -119,7 +119,6 @@ class LoginState extends State<LoginForm> {
             },
             initialValue: widget.usernameL,
             validator: validateUsername,
-            autovalidate: autovalidate,
           ),
           TextFormField(
             obscureText: true,
@@ -134,7 +133,6 @@ class LoginState extends State<LoginForm> {
             initialValue: widget.passwordL,
             validator: validatePassword,
             //提示
-            autovalidate: autovalidate,
           ),
           SizedBox(
             height: 32.0,
@@ -162,7 +160,7 @@ class LoginState extends State<LoginForm> {
     );
   }
 
-  Future<LCUser> _login() async {
+  Future<LCUser?> _login() async {
     try {
       // 登录成功
       LCUser user = await LCUser.login('$username', '$password');

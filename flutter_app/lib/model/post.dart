@@ -6,10 +6,10 @@ class Post {
     this.description,
   });
 
-  final String title;
-  final String author;
-  final String imageUrl;
-  final String description;
+  final String? title;
+  final String? author;
+  final String? imageUrl;
+  final String? description;
 
   bool selected = false;
 }

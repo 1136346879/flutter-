@@ -19,7 +19,7 @@ class ContainerBoxDecorationDemo extends StatelessWidget {
           // repeat: ImageRepeat.repeatY,
           fit: BoxFit.cover,
           colorFilter: ColorFilter.mode(
-            Colors.indigoAccent[400].withOpacity(0.5),
+            Colors.indigoAccent[400]?.withOpacity(0.5) ?? Colors.blue,
             BlendMode.hardLight,
           ),
         ),
@@ -37,7 +37,7 @@ class ContainerBoxDecorationDemo extends StatelessWidget {
             decoration: BoxDecoration(
               color: Color.fromRGBO(3, 54, 255, 1.0),
               border: Border.all(
-                color: Colors.indigoAccent[100],
+                color: Colors.indigoAccent[100]??Colors.cyanAccent,
                 width: 3.0,
                 style: BorderStyle.solid,
               ),

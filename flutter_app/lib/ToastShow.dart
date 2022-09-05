@@ -5,7 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 class ToastShow extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return null;
+    return Container();
   }
    showLongToast(String showString) {
     Fluttertoast.showToast(

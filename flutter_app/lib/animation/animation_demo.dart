@@ -19,10 +19,10 @@ class AnimationDemoHome extends StatefulWidget {
 
 class _AnimationDemoHomeState extends State<AnimationDemoHome>
     with TickerProviderStateMixin {
-  AnimationController animationDemoController;
-  Animation animation;
-  Animation animationColor;
-  CurvedAnimation curve;
+  AnimationController? animationDemoController;
+  Animation? animation;
+  Animation? animationColor;
+  CurvedAnimation? curve;
 
   @override
   void initState() {
@@ -37,18 +37,18 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
     );
 
     curve = CurvedAnimation(
-        parent: animationDemoController, curve: Curves.bounceOut);
+        parent: animationDemoController!, curve: Curves.bounceOut);
 
-    animation = Tween(begin: 32.0, end: 100.0).animate(curve);
+    animation = Tween(begin: 32.0, end: 100.0).animate(curve!);
     animationColor =
-        ColorTween(begin: Colors.red, end: Colors.red[900]).animate(curve);
+        ColorTween(begin: Colors.red, end: Colors.red[900]).animate(curve!);
 
     // animationDemoController.addListener(() {
     //   // print('${animationDemoController.value}');
     //   setState(() {});
     // });
 
-    animationDemoController.addStatusListener((AnimationStatus status) {
+    animationDemoController!.addStatusListener((AnimationStatus status) {
       print(status);
     });
 
@@ -59,7 +59,7 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
   void dispose() {
     super.dispose();
 
-    animationDemoController.dispose();
+    animationDemoController!.dispose();
   }
 
   @override
@@ -70,34 +70,34 @@ class _AnimationDemoHomeState extends State<AnimationDemoHome>
           animation,
           animationColor,
         ],
-        controller: animationDemoController,
+        controller: animationDemoController!,
       ),
     );
   }
 }
 
 class AnimatedHeart extends AnimatedWidget {
-  final List animations;
-  final AnimationController controller;
+  final List? animations;
+  final AnimationController? controller;
 
   AnimatedHeart({
     this.animations,
     this.controller,
-  }) : super(listenable: controller);
+  }) : super(listenable: controller!);
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.favorite),
-      iconSize: animations[0].value,
-      color: animations[1].value,
+      iconSize: animations![0].value,
+      color: animations![1].value,
       onPressed: () {
-        switch (controller.status) {
+        switch (controller!.status) {
           case AnimationStatus.completed:
-            controller.reverse();
+            controller!.reverse();
             break;
           default:
-            controller.forward();
+            controller!.forward();
         }
       },
     );

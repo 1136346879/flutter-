@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/model/post.dart';
 
 class PostShow extends StatelessWidget {
-  final Post post;
+  final Post? post;
 
   PostShow({
     @required this.post,
@@ -12,13 +12,13 @@ class PostShow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${post.title}'),
+        title: Text('${post!.title}'),
         elevation: 0.0,
       ),
       body: Column(
         children: <Widget>[
           Image.network(
-            post.imageUrl, height: 180, fit: BoxFit.cover
+            post!.imageUrl!, height: 180, fit: BoxFit.cover
           ),
           Container(
             padding: EdgeInsets.all(32.0),
@@ -26,10 +26,10 @@ class PostShow extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('${post.title}', style: Theme.of(context).textTheme.title),
-                Text('${post.author}', style: Theme.of(context).textTheme.subhead),
+                Text('${post!.title}', style: Theme.of(context).textTheme.titleMedium),
+                Text('${post!.author}', style: Theme.of(context).textTheme.subtitle1),
                 SizedBox(height: 32.0),
-                Text('${post.description}', style: Theme.of(context).textTheme.body1),
+                Text('${post!.description}', style: Theme.of(context).textTheme.bodyMedium),
               ],
             ),
           ),

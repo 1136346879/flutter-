@@ -71,8 +71,8 @@ class AppConfig {
     );
   }
 
-  static UserTools userTools;
-  static AppTools appTools;
+  static UserTools? userTools;
+  static AppTools? appTools;
 
   static init() async {
     userTools = await UserTools.getInstance();

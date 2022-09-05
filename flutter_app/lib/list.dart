@@ -10,7 +10,7 @@ class MovieList extends StatefulWidget {
   var mt;
 
 //固定写法
-  MovieList({Key key, @required this.mt}) : super(key: key);
+  MovieList({@required this.mt});
 
   @override
   _MovieListState createState() {

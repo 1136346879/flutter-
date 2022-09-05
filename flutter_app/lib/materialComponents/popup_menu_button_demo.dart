@@ -6,7 +6,7 @@ class PopupMenuButtonDemo extends StatefulWidget {
 }
 
 class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
-  String _currentMenuItem = 'Home';
+  String? _currentMenuItem = 'Home';
   
   @override
   Widget build(BuildContext context) {
@@ -23,12 +23,12 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(_currentMenuItem),
+                Text(_currentMenuItem!),
                 PopupMenuButton(
                   onSelected: (value) {
                     print(value);
                     setState(() {
-                      _currentMenuItem = value;
+                      _currentMenuItem = value.toString();
                     });
                   },
                   itemBuilder: (BuildContext context) => [

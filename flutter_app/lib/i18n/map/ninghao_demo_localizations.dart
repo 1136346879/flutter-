@@ -6,7 +6,7 @@ class NinghaoDemoLocalizations {
 
   NinghaoDemoLocalizations(this.locale);
 
-  static NinghaoDemoLocalizations of(BuildContext context) {
+  static NinghaoDemoLocalizations? of(BuildContext context) {
     return Localizations.of<NinghaoDemoLocalizations>(
       context,
       NinghaoDemoLocalizations
@@ -22,8 +22,8 @@ class NinghaoDemoLocalizations {
     }
   };
 
-  String get title {
-    return _localized[locale.languageCode]['title'];
+  String? get title {
+    return _localized[locale.languageCode]!['title'];
   }
 }
 

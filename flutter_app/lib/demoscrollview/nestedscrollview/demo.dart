@@ -6,7 +6,7 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
-  List<String> _tabs;
+  List<String>? _tabs;
 
   @override
   void initState() {
@@ -17,7 +17,7 @@ class _IndexState extends State<Index> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: _tabs.length, // This is the number of tabs.
+      length: _tabs!.length, // This is the number of tabs.
       child: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           // These are the slivers that show up in the "outer" scroll view.
@@ -32,7 +32,7 @@ class _IndexState extends State<Index> {
               // widgets that do not overlap the next sliver.
               // 交叠减震器，当组件滚动造成交叠、覆盖时，可以增加SliverOverlapAbsorber
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-              child: SliverAppBar(
+              sliver: SliverAppBar(
                 title: const Text(
                     'NestedScrollView'), // This is the title in the app bar.
                 pinned: true, // 固定顶部appbar
@@ -48,7 +48,7 @@ class _IndexState extends State<Index> {
                 forceElevated: innerBoxIsScrolled, // appbar底部阴影
                 bottom: TabBar(
                   // These are the widgets to put in each tab in the tab bar.
-                  tabs: _tabs.map((String name) => Tab(text: name)).toList(),
+                  tabs: _tabs!.map((String name) => Tab(text: name)).toList(),
                 ),
                 // appbar导航左侧按钮
                 leading: Container(
@@ -67,7 +67,7 @@ class _IndexState extends State<Index> {
         },
         body: TabBarView(
           // These are the contents of the tab views, below the tabs.
-          children: _tabs.map((String name) {
+          children: _tabs!.map((String name) {
             return SafeArea(
               top: true,
               bottom: true,

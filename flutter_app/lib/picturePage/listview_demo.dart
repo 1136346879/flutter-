@@ -13,16 +13,16 @@ class ListViewDemo extends StatelessWidget {
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 16/9,
-                child: Image.network(posts[index].imageUrl, fit: BoxFit.cover),
+                child: Image.network(posts[index].imageUrl!, fit: BoxFit.cover),
               ),
               SizedBox(height: 16.0),
               Text(
-                posts[index].title,
-                style: Theme.of(context).textTheme.title
+                posts[index].title!,
+                style: Theme.of(context).textTheme.titleMedium
               ),
               Text(
-                posts[index].author,
-                style: Theme.of(context).textTheme.subhead
+                posts[index].author!,
+                style: Theme.of(context).textTheme.subtitle1
               ),
               SizedBox(height: 16.0),
             ],

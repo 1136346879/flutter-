@@ -81,8 +81,8 @@ class _WidgetDemo extends StatelessWidget {
 }
 
 class ListItem extends StatelessWidget {
-  final String title;
-  final Widget page;
+  final String? title;
+  final Widget? page;
 
   ListItem({
     this.title,
@@ -92,10 +92,10 @@ class ListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(title),
+      title: Text(title!),
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => page),
+          MaterialPageRoute(builder: (context) => page!),
         );
       },
     );

@@ -5,9 +5,9 @@ import 'package:flutter_app/store/index.dart' show Store;
 import 'package:flutter_app/config/theme.dart' show AppTheme;
 
 class Index extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
 
-  Index({Key key, this.child}) : super(key: key);
+  Index({Key? key, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

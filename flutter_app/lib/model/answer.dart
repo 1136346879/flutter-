@@ -3,14 +3,14 @@ import 'package:flutter_app/model/Question.dart';
 import 'package:flutter_app/model/author.dart';
 
 class Answer {
-  int id;
-  String excerpt;
-  int created_time;
-  int updated_time;
-  int comment_count;
-  int voteup_count;
-  Question question;
-  Author author;
+  int? id;
+  String? excerpt;
+  int? created_time;
+  int? updated_time;
+  int? comment_count;
+  int? voteup_count;
+  Question? question;
+  Author? author;
 
   Answer.fromJson(Map data) {
     id = data['id'];

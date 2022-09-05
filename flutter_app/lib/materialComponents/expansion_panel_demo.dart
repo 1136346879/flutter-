@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ExpansionPanelItem {
-  final String headerText;
-  final Widget body;
-  bool isExpanded;
+  final String? headerText;
+  final Widget? body;
+  bool? isExpanded;
 
   ExpansionPanelItem({
     this.headerText,
@@ -18,7 +18,7 @@ class ExpansionPanelDemo extends StatefulWidget {
 }
 
 class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
-  List<ExpansionPanelItem> _expansionPanelItems;
+  List<ExpansionPanelItem>? _expansionPanelItems;
 
   @override
   void initState() {
@@ -70,20 +70,20 @@ class _ExpansionPanelDemoState extends State<ExpansionPanelDemo> {
             ExpansionPanelList(
               expansionCallback: (int panelIndex, bool isExpanded) {
                 setState(() {
-                  _expansionPanelItems[panelIndex].isExpanded = !isExpanded;
+                  _expansionPanelItems![panelIndex].isExpanded = !isExpanded;
                 });
               },
-              children: _expansionPanelItems.map(
+              children: _expansionPanelItems!.map(
                 (ExpansionPanelItem item) {
                   return ExpansionPanel(
-                    isExpanded: item.isExpanded,
-                    body: item.body,
+                    isExpanded: item.isExpanded!,
+                    body: item.body!,
                     headerBuilder: (BuildContext context, bool isExpanded) {
                       return Container(
                         padding: EdgeInsets.all(16.0),
                         child: Text(
-                          item.headerText,
-                          style: Theme.of(context).textTheme.title,
+                          item.headerText!,
+                          style: Theme.of(context).textTheme.titleMedium,
                         ),
                       );
                     },

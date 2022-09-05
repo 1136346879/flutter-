@@ -8,17 +8,16 @@ import 'package:flutter_app/components/exampleComp.dart' as ExampleComp;
 import 'package:flutter_app/components/updatingComp.dart' as UpdatingComp;
 import 'package:flutter_app/utils/file.dart' as FileUtils;
 import 'package:flutter_app/utils/loadAsset.dart' as LoadAssetUtils;
-import 'package:flutter_app/router/index.dart' show FluroRouter;
 import 'package:flutter_app/config/theme.dart' show AppTheme;
 import 'package:flutter_app/utils/share.dart' as AppShare;
 
 class Index extends StatefulWidget {
-  final List<Widget> demoChild;
-  final String originCodeUrl;
-  final String mdUrl;
-  final String title;
+  final List<Widget>? demoChild;
+  final String? originCodeUrl;
+  final String? mdUrl;
+  final String? title;
   Index({
-    Key key,
+    Key? key,
     this.title,
     this.demoChild,
     this.originCodeUrl,
@@ -27,25 +26,25 @@ class Index extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => IndexState(
-      title: title,
-      demoChild: demoChild,
-      originCodeUrl: originCodeUrl,
-      mdUrl: mdUrl);
+      title: title??"",
+      demoChild: demoChild??[],
+      originCodeUrl: originCodeUrl??"",
+      mdUrl: mdUrl??"");
 }
 
 class IndexState extends State<Index> {
-  List<Widget> _bodyList = [];
+  List<Widget>? _bodyList = [];
   final dynamic modelChild;
-  final List mdList;
-  final List<Widget> demoChild;
-  final String originCodeUrl;
-  final String mdUrl;
-  final String title;
+  final List? mdList;
+  final List<Widget>? demoChild;
+  final String? originCodeUrl;
+  final String? mdUrl;
+  final String? title;
   bool loading = true;
   dynamic model;
 
   IndexState({
-    Key key,
+    Key? key,
     this.title,
     this.modelChild,
     this.mdList,
@@ -61,18 +60,18 @@ class IndexState extends State<Index> {
   }
 
   void init() async {
-    this._bodyList.length = 0;
+    this._bodyList?.length = 0;
     String mdText = await this.getMdFile(this.mdUrl);
     if (mdText.length > 30 || !this.model.config.state.isPro) {
-      this._bodyList.add(await MarkDownComp.Index(mdText));
+      this._bodyList!.add(await MarkDownComp.Index(mdText));
       // demo
-      if (this.demoChild != null && this.demoChild.length > 0) {
-        this.demoChild.forEach((Widget item) {
-          this._bodyList.add(ExampleComp.Index(child: item));
+      if (this.demoChild != null && this.demoChild!.length > 0) {
+        this.demoChild!.forEach((Widget item) {
+          this._bodyList!.add(ExampleComp.Index(child: item));
         });
       }
     } else {
-      this._bodyList.add(UpdatingComp.Index());
+      this._bodyList!.add(UpdatingComp.Index());
     }
     setState(() {
       this.loading = false;
@@ -99,18 +98,18 @@ class IndexState extends State<Index> {
   }
 
   openPage(context) async {
-    String url = this.mdUrl;
+    String url = this.mdUrl!;
     // 加载页面
     if (this.model.config.state.isPro) {
-      FluroRouter.router.navigateTo(context,
-          '/webview?title=${this.title}&url=${Uri.encodeComponent(this.model.config.state.env.githubAssetOrigin + url.replaceAll(RegExp('/index.md'), '').replaceAll('docs', 'lib'))}');
+      // FluroRouter.router.navigateTo(context,
+      //     '/webview?title=${this.title}&url=${Uri.encodeComponent(this.model.config.state.env.githubAssetOrigin + url.replaceAll(RegExp('/index.md'), '').replaceAll('docs', 'lib'))}');
     } else {
       // 加载本地
       String mdStr = await FileUtils.readLocaleFile(url);
       Navigator.of(context).push(
         MaterialPageRoute(builder: (BuildContext context) {
           return BaseComp.Index(
-            title: this.title,
+            title: this.title!,
             child: (context, child, model) {
               return MarkDownComp.Index(mdStr);
             },
@@ -132,10 +131,10 @@ class IndexState extends State<Index> {
           Icons.insert_link,
         ),
         onPressed: () async {
-          FluroRouter.router.navigateTo(
-            context,
-            '/webview?title=${this.title}&url=${Uri.encodeComponent(this.originCodeUrl)}',
-          );
+          // FluroRouter.router.navigateTo(
+          //   context,
+          //   '/webview?title=${this.title}&url=${Uri.encodeComponent(this.originCodeUrl!)}',
+          // );
         },
       ),
       IconButton(
@@ -206,7 +205,7 @@ class IndexState extends State<Index> {
     return Scrollbar(
       child: ListView(
         padding: EdgeInsets.all(10.0),
-        children: this._bodyList,
+        children: this._bodyList!,
       ),
     );
   }

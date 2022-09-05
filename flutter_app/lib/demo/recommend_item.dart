@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/model/recommend.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class RecommendListItem extends StatelessWidget {
-  final Recommend recommend;
+  final Recommend? recommend;
 
-  const RecommendListItem({Key key, this.recommend}) : super(key: key);
+  const RecommendListItem({Key? key, this.recommend}) : super(key: key);
 
   Widget infoItem(IconData icon, String info) {
     return Row(
@@ -35,7 +34,7 @@ class RecommendListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            recommend.target.question.title,
+            recommend!.target?.question?.title??"",
             style: TextStyle(
               fontSize: 20.0,
               color: Colors.black,
@@ -48,23 +47,20 @@ class RecommendListItem extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar(
-                radius: 15.0,
-                backgroundImage: CachedNetworkImageProvider(
-                    recommend.target.author.avatar_url),
-              ),
+            Image.network(
+                    recommend?.target?.author?.avatar_url??""),
               SizedBox(
                 width: 10.0,
               ),
               Text(
-                this.recommend.target.author.name,
+                this.recommend!.target!.author!.name!,
                 style: TextStyle(fontSize: 15.0),
               ),
               SizedBox(
                 width: 10.0,
               ),
               Text(
-                this.recommend.target.author.headline,
+                this.recommend!.target!.author!.headline!,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 15.0,
@@ -77,7 +73,7 @@ class RecommendListItem extends StatelessWidget {
             height: 8.0,
           ),
           Text(
-            this.recommend.target.excerpt,
+            this.recommend!.target!.excerpt!,
             style: TextStyle(fontSize: 16, color: Colors.black87),
           ),
           SizedBox(
@@ -86,12 +82,12 @@ class RecommendListItem extends StatelessWidget {
           Row(
             children: <Widget>[
               infoItem(Icons.navigation,
-                  this.recommend.target.voteup_count.toString()),
+                  this.recommend!.target!.voteup_count.toString()),
               SizedBox(
                 width: 10.0,
               ),
               infoItem(Icons.chat_bubble_outline,
-                  this.recommend.target.comment_count.toString()),
+                  this.recommend!.target!.comment_count.toString()),
             ],
           )
         ],

@@ -56,7 +56,7 @@ class SliverListDemo extends StatelessWidget {
                   AspectRatio(
                     aspectRatio: 16/9,
                     child: Image.network(
-                      posts[index].imageUrl,
+                      posts[index].imageUrl!,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -67,14 +67,14 @@ class SliverListDemo extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          posts[index].title,
+                          posts[index].title!,
                           style: TextStyle(
                             fontSize: 20.0,
                             color: Colors.white
                           ),
                         ),
                         Text(
-                          posts[index].author,
+                          posts[index].author!,
                           style: TextStyle(
                             fontSize: 13.0,
                             color: Colors.white
@@ -108,7 +108,7 @@ class SliverGridDemo extends StatelessWidget {
         (BuildContext context, int index) {
           return Container(
             child: Image.network(
-              posts[index].imageUrl,
+              posts[index].imageUrl!,
               fit: BoxFit.cover,
             ),
           );

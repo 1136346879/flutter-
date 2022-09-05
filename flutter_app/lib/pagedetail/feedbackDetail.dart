@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class feedbackDetail extends StatefulWidget{
-  feedbackDetail(Key key) : super(key: key);
+  feedbackDetail(Key? key) : super(key: key);
 
   @override
   _widgetFeedBack createState() {

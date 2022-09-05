@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CommonCell extends StatelessWidget {
-  final VoidCallback onPressed;
-  final String subtitle;
-  final String title;
+  final VoidCallback? onPressed;
+  final String? subtitle;
+  final String? title;
 
   CommonCell({this.title, this.subtitle, this.onPressed});
 
@@ -21,9 +21,9 @@ class CommonCell extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: <Widget>[
-                  Text(title, style: TextStyle(fontSize: 18)),
+                  Text(title!, style: TextStyle(fontSize: 18)),
                   Expanded(child: Container()),
-                  Text(subtitle, style: TextStyle(fontSize: 16)),
+                  Text(subtitle!, style: TextStyle(fontSize: 16)),
                   SizedBox(width: 8.0,),
                   Image.asset('img/arrow_right.png'),
                 ],

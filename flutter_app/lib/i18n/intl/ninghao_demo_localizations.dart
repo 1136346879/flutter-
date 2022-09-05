@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'ninghao_demo_messages_all.dart';
 
 class NinghaoDemoLocalizations {
-  static NinghaoDemoLocalizations of(BuildContext context) {
+  static NinghaoDemoLocalizations? of(BuildContext context) {
     return Localizations.of<NinghaoDemoLocalizations>(
       context,
       NinghaoDemoLocalizations
@@ -12,7 +12,7 @@ class NinghaoDemoLocalizations {
 
   static Future<NinghaoDemoLocalizations> load(Locale locale) {
     final String name =
-        locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+        locale.countryCode!.isEmpty ? locale.languageCode : locale.toString();
     
     final String localeName = Intl.canonicalizedLocale(name);
 

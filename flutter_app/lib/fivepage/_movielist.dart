@@ -30,6 +30,7 @@ class statesListMovie extends State<Movielist> {
             }
           }
             if (index == mItem.length) {
+              return Container();
             //return _buildLoadText();
             // return _buildProgressIndicator();
           } else {

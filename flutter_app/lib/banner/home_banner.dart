@@ -6,7 +6,7 @@ class HomeBanner extends StatefulWidget {
   final List<StoryModel> bannerStories;
   final OnTapBannerItem onTap;
 
-  HomeBanner(this.bannerStories, this.onTap, {Key key})
+  HomeBanner(this.bannerStories, this.onTap, {Key? key})
       :super(key: key);
 
   @override
@@ -18,8 +18,8 @@ class HomeBanner extends StatefulWidget {
 class _BannerState extends State<HomeBanner> {
   int virtualIndex = 0;
   int realIndex = 1;
-  PageController controller;
-  Timer timer;
+  PageController? controller;
+  Timer? timer;
 
   @override
   void initState() {
@@ -30,7 +30,7 @@ class _BannerState extends State<HomeBanner> {
                                 );
     timer = Timer.periodic(Duration(seconds: 2), (timer) { // 自动滚动
       //  print(realIndex);
-      controller.animateToPage(realIndex + 1,
+      controller!.animateToPage(realIndex + 1,
           duration: Duration(milliseconds: 500),
           curve: Curves.linear);
     });
@@ -39,8 +39,8 @@ class _BannerState extends State<HomeBanner> {
   @override
   void dispose() {
     super.dispose();
-    controller.dispose();
-    timer.cancel();
+    controller!.dispose();
+    timer!.cancel();
   }
 
   @override
@@ -87,8 +87,8 @@ class _BannerState extends State<HomeBanner> {
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-         Image.network(story.image, fit: BoxFit.cover),
-          _buildItemTitle(story.title), // 内容文字,大意
+         Image.network(story.image!, fit: BoxFit.cover),
+          _buildItemTitle(story.title!), // 内容文字,大意
         ],),);
   }
 
@@ -130,10 +130,10 @@ class _BannerState extends State<HomeBanner> {
     int count = widget.bannerStories.length;
     if (index == 0) {
       virtualIndex = count - 1;
-      controller.jumpToPage(count);
+      controller!.jumpToPage(count);
     } else if (index == count + 1) {
       virtualIndex = 0;
-      controller.jumpToPage(1);
+      controller!.jumpToPage(1);
     } else {
       virtualIndex = index - 1;
     }

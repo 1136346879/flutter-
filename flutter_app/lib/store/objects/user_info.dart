@@ -1,13 +1,13 @@
 class UserInfo extends Object{
-  String fbid;
-  String uid;
-  String name;
-  String token;
-  String avatar;
-  int expiresIn;
-  int expireTime;
-  bool loading;
-  int age;
+  String? fbid;
+  String? uid;
+  String? name;
+  String? token;
+  String? avatar;
+  int? expiresIn;
+  int? expireTime;
+  bool? loading;
+  int? age;
 
   //
   UserInfo(
@@ -28,9 +28,9 @@ class UserInfo extends Object{
     avatar = user['avatar'];
     token = json['token'];
     expiresIn = json['expiresIn'] ?? 0;
-    if (expiresIn >= 0) {
+    if ((expiresIn??0) >= 0) {
       int now = DateTime.now().millisecondsSinceEpoch;
-      expireTime = now + expiresIn * 1000;
+      expireTime = now + (expiresIn??0) * 1000;
     }
   }
 

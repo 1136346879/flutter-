@@ -1,8 +1,8 @@
 class StoryModel {
-  final String title;
-  final String image;
-  final int id;
-  final String url;
+  final String? title;
+  final String? image;
+  final int? id;
+  final String? url;
 
   StoryModel(this.id, this.title, {this.image,this.url});
 

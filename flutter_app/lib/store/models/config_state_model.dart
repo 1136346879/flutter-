@@ -18,7 +18,7 @@ class ConfigModel {
     print('version ${model.config.state.env.versionUrl}');
     String _version = await loadAssets(model.config.state.env.versionUrl).then((resp) {
       Map<String, dynamic> res = json.decode(resp);
-      return res['version'].toString() ?? '0.1';
+      return res['version'].toString();
     }).catchError((err) {
       print('err $err');
       return '0.0';

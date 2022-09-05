@@ -9,7 +9,6 @@ import 'package:flutter_app/gridviewpage.dart';
 import 'package:flutter_app/shoppingcarpage.dart';
 import 'package:flutter_app/banner/pagination.dart';
 import 'package:flutter_app/banner/commont_banner.dart';
-import 'package:x5_webview/x5_sdk.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -323,17 +322,4 @@ class LogoAppState extends State<HomeScreen> {
     }
   }
 
-  void _initX5Webview() async{
-    var isOk = false;
-    if(!isOk){
-      isOk= await X5Sdk.init();
-    }
-    var fileS = await rootBundle.loadString("ko/index.html");
-    var url = Uri.dataFromString(fileS,
-        mimeType: 'text/html',
-        encoding: Encoding.getByName('utf-8'),
-    )
-        .toString();
-    X5Sdk.openWebActivity(url, title: "本地html示例");
-  }
 }

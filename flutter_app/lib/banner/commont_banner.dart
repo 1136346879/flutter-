@@ -4,9 +4,9 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:flutter_app/ToastShow.dart' as ToastUtil;
 
 class CommontBanner extends StatelessWidget {
-  final List swiperDataList;
+  final List? swiperDataList;
 
-  CommontBanner({Key key, this.swiperDataList}) : super(key: key);
+  CommontBanner({Key? key, this.swiperDataList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,13 +14,13 @@ class CommontBanner extends StatelessWidget {
       height: 200,
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
-          return Image.network("${swiperDataList[index]['image']}",
+          return Image.network("${swiperDataList![index]['image']}",
               fit: BoxFit.fill);
         },
         onTap: (index) {
-          ToastUtil.ToastShow().showBottomToast(swiperDataList[index]['title']);
+          ToastUtil.ToastShow().showBottomToast(swiperDataList![index]['title']);
         },
-        itemCount: swiperDataList.length,
+        itemCount: swiperDataList!.length,
         pagination: new SwiperPagination(),
         autoplay: true,
       ),

@@ -16,7 +16,7 @@ import 'package:flutter_app/fivepage/TabBarView.dart';
 /// 可以随意切换页面
 class every_page extends StatefulWidget{
 
-  every_page(Key key) : super(key : key);
+  every_page(Key? key) : super(key : key);
   @override
   every_pageState createState() {
     return every_pageState();

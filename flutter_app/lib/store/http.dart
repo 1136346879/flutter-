@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart'
     show Dio, Options, LogInterceptor, DioError, BaseOptions;
 
-Dio getDio([Options options]) {
+Dio getDio([Options? options]) {
   Dio dio = new Dio(BaseOptions(
     connectTimeout: 30 * 1000,
     receiveTimeout: 30 * 1000,

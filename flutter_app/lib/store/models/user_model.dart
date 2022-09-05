@@ -11,7 +11,7 @@ mixin UserModel on Model {
   }
 
   void setAge() {
-    _userInfo.age += 1;
+    _userInfo.age = 12;
     notifyListeners();
   }
 }

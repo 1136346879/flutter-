@@ -3,14 +3,14 @@ import 'dart:core';
 import 'package:flutter_app/model/author.dart';
 
 class Idea {
-  Author author;
-  int created_time;
-  String content;
-  String imageurl;
+  Author? author;
+  int? created_time;
+  String? content;
+  String? imageurl;
 
-  int comment_count;
-  int follower_count;
-  int favor_count;
+  int? comment_count;
+  int? follower_count;
+  int? favor_count;
 
 
 

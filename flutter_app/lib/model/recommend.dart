@@ -4,12 +4,12 @@ import 'package:flutter_app/model/answer.dart';
 import 'package:flutter_app/model/author.dart';
 
 class Recommend {
-  String id;
-  String type;
-  int created_time;
-  int updated_time;
-  Answer target;
-  String action_text;
+  String? id;
+  String? type;
+  int? created_time;
+  int? updated_time;
+  Answer? target;
+  String? action_text;
 
   Recommend.fromJson(Map data) {
     id = data['id'];

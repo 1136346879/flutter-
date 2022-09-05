@@ -5,20 +5,20 @@ part 'song.g.dart';
 @JsonSerializable()
 class Song {
 
-  String _id;
-  String imgUrl;
-  String lrcUrl;
-  String size;
-  String singer;
-  String songUrl;
-  String title;
-  String duration;
-  String imgUrl_s;
-  String desc;
-  bool isFav;
+  String? _id;
+  String? imgUrl;
+  String? lrcUrl;
+  String? size;
+  String? singer;
+  String? songUrl;
+  String? title;
+  String? duration;
+  String? imgUrl_s;
+  String? desc;
+  bool? isFav;
 
   @JsonKey(name: '_id', nullable: true)
-  String id;
+  String? id;
 
   /// 自定义属性
   bool isExpaned = false;

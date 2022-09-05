@@ -4,16 +4,16 @@ import 'headerComp.dart' as Header;
 
 class Index extends StatelessWidget {
   final dynamic child;
-  final String title;
+  final String? title;
 
-  Index({Key key, this.title, this.child}) : super(key: key);
+  Index({Key? key, this.title, this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Store.connect(builder: (context, child, model) {
       return Scaffold(
         appBar: AppBar(
-          title: Header.Index(this.title),
+          title: Header.Index(this.title!),
         ),
         body: ListView(
           children: [this.child(context, child, model)],

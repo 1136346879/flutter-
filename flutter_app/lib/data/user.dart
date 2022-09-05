@@ -5,15 +5,15 @@ part 'user.g.dart';
 @JsonSerializable()
 class User {
 
-  String userId;
-  String userName;
-  String passWord;
-  String creatDateStr;
-  String creatDate;
-  String token;
-  String email;
+  String? userId;
+  String? userName;
+  String? passWord;
+  String? creatDateStr;
+  String? creatDate;
+  String? token;
+  String? email;
   @JsonKey(nullable: true)
-  String userPic = '';
+  String? userPic = '';
   User();
 
   factory User.fromJson(Map<String, dynamic> json) =>

@@ -4,8 +4,8 @@ import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:share/share.dart';
 
 class WebPage extends StatefulWidget {
-  final String url;
-  final String title;
+  final String? url;
+  final String? title;
 
   WebPage({@required this.url, this.title});
 
@@ -49,7 +49,7 @@ class _WebPageState extends State<WebPage> {
       ),
     );
   }
-  Future<String> loadJS(String name) async {
+  loadJS(String name) async {
     print("laod js");
     var givenJS = rootBundle.loadString(name);
     return givenJS.then((String js) {

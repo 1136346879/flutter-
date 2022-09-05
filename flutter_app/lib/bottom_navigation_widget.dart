@@ -46,7 +46,7 @@ class BottomNavigationWidget extends StatefulWidget {
 class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
   int _tabIndex = 0;
   final _BottomNavigationWidgetColor = Colors.blue;
-  List<Widget> list = new List();
+  List<Widget> list = [];
 
   @override
   void initState() {
@@ -97,43 +97,49 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
           iconSize: 24.0,
           items: [
             BottomNavigationBarItem(
+              label: 'home',
                 icon: Icon(Icons.home, color: _BottomNavigationWidgetColor),
-                title: Text('home',
+                activeIcon: Text('home',
                     style: TextStyle(color: _BottomNavigationWidgetColor))),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.email,
                   color: _BottomNavigationWidgetColor,
                 ),
-                title: Text('Email',
+                label: 'Email',
+                activeIcon: Text('Email',
                     style: TextStyle(color: _BottomNavigationWidgetColor))),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.pages,
                   color: _BottomNavigationWidgetColor,
                 ),
-                title: Text('Pages',
+                label: 'Pages',
+                activeIcon: Text('Pages',
                     style: TextStyle(color: _BottomNavigationWidgetColor))),
             BottomNavigationBarItem(
                 icon: Icon(
                   Icons.airplay,
                   color: _BottomNavigationWidgetColor,
                 ),
-                title: Text('AipPlay',
+                label: 'AipPlay',
+                activeIcon: Text('AipPlay',
                     style: TextStyle(color: _BottomNavigationWidgetColor))),
             BottomNavigationBarItem(
                 icon: Icon(
                   CupertinoIcons.shopping_cart,
                   color: _BottomNavigationWidgetColor,
                 ),
-                title: Text('购物车',
+                label: '购物车',
+                activeIcon: Text('购物车',
                     style: TextStyle(color: _BottomNavigationWidgetColor))),
                        BottomNavigationBarItem(
                 icon: Icon(
                   CupertinoIcons.person,
                   color: _BottomNavigationWidgetColor,
                 ),
-                title: Text('我的',
+                           label: '我的',
+                           activeIcon: Text('我的',
                     style: TextStyle(color: _BottomNavigationWidgetColor))),
           ],
           type: BottomNavigationBarType.fixed,

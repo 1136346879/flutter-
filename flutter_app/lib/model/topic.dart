@@ -1,8 +1,8 @@
 
 class Topic {
-  String imageurl;
-  String title;
-  String content;
+  String? imageurl;
+  String? title;
+  String? content;
 
   Topic.fromJson(Map data) {
     imageurl = data['imageurl'];

@@ -3,9 +3,9 @@ import 'headerComp.dart' as Header;
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart' show FlutterWebviewPlugin, WebviewScaffold;
 
 class Index extends StatelessWidget {
-  final String url;
-  final String title;
-  Index({Key key, @required this.url, this.title}) : super(key: key);
+  final String? url;
+  final String? title;
+  Index({Key? key, @required this.url, this.title}) : super(key: key);
 
   void controller() {
     final flutterWebviewPlugin = new FlutterWebviewPlugin();
@@ -19,7 +19,7 @@ class Index extends StatelessWidget {
     return WebviewScaffold(
       url: this.url,
       appBar: new AppBar(
-        title: Header.Index(this.title),
+        title: Header.Index(this.title??""),
       ),
       withZoom: true,
       withLocalStorage: true,

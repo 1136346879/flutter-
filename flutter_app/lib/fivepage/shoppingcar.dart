@@ -7,7 +7,7 @@ import 'package:flutter_app/fivepage/_movielist.dart' as movielist;
 
 Dio dio = new Dio();
 class shippingcar extends StatefulWidget {
-     shippingcar({Key key}) : super(key: key);
+     shippingcar({Key? key}) : super(key: key);
 //  @override
 //  Widget build(BuildContext context) {
 //    return Scaffold(

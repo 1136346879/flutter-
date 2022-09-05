@@ -24,7 +24,7 @@ class _CheckboxDemoState extends State<CheckboxDemo> {
               value: _checkboxItemA,
               onChanged: (value) {
                 setState(() {
-                  _checkboxItemA = value;
+                  _checkboxItemA = value!;
                 });
               },
               title: Text('Checkbox Item A'),

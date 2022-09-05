@@ -6,7 +6,7 @@ import 'package:flutter_app/pagedetail/FourthPage.dart';
  */
 class welcomePage extends StatefulWidget{
 
-  welcomePage(Key key) : super(key : key);
+  welcomePage(Key? key) : super(key : key);
 
   @override
   _widgetWelcome createState() {

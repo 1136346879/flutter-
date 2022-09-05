@@ -72,27 +72,11 @@ class ButtonDemo extends StatelessWidget {
               shape: StadiumBorder(),
             ),
           ),
-          child: OutlineButton(
+
             child: Text('Button'),
-            onPressed: () {},
-            splashColor: Colors.grey[100],
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-            // color: Theme.of(context).accentColor,
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
-            // textTheme: ButtonTextTheme.primary,
-          ),
         ),
         SizedBox(width: 16.0,),
-        OutlineButton.icon(
-          icon: Icon(Icons.add),
-          label: Text('Button'),
-          onPressed: () {},
-          splashColor: Colors.grey,
-          textColor: Theme.of(context).accentColor,
-        ),
+        Icon(Icons.add),
       ],
     );
 
@@ -101,16 +85,8 @@ class ButtonDemo extends StatelessWidget {
       children: <Widget>[
         Container(
           width: 130.0,
-          child: OutlineButton(
-            child: Text('Button'),
-            onPressed: () {},
-            splashColor: Colors.grey[100],
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
-          ),
+          child:Text('Button'),
+
         ),
       ],
     );
@@ -119,30 +95,14 @@ class ButtonDemo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Expanded(
-          child: OutlineButton(
-            child: Text('Button'),
-            onPressed: () {},
-            splashColor: Colors.grey[100],
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
-          ),
+          child: Text('Button'),
+
         ),
         SizedBox(width: 16.0,),
         Expanded(
           flex: 2,
-          child: OutlineButton(
-            child: Text('Button'),
-            onPressed: () {},
-            splashColor: Colors.grey[100],
-            borderSide: BorderSide(
-              color: Colors.black,
-            ),
-            textColor: Colors.black,
-            highlightedBorderColor: Colors.grey,
-          ),
+          child: Text('Button'),
+
         ),
       ],
     );
@@ -158,26 +118,10 @@ class ButtonDemo extends StatelessWidget {
           ),
           child: ButtonBar(
             children: <Widget>[
-              OutlineButton(
-                child: Text('Button'),
-                onPressed: () {},
-                splashColor: Colors.grey[100],
-                borderSide: BorderSide(
-                  color: Colors.black,
-                ),
-                textColor: Colors.black,
-                highlightedBorderColor: Colors.grey,
-              ),
-              OutlineButton(
-                child: Text('Button'),
-                onPressed: () {},
-                splashColor: Colors.grey[100],
-                borderSide: BorderSide(
-                  color: Colors.black,
-                ),
-                textColor: Colors.black,
-                highlightedBorderColor: Colors.grey,
-              ),
+              Text('Button'),
+
+             Text('Button'),
+
             ],
           ),
         ),

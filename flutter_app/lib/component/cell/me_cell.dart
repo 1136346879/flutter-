@@ -3,9 +3,9 @@ import 'package:flutter_app/utils/screen.dart';
 import 'dart:math' as math;
 
 class MeCell extends StatelessWidget {
-  final VoidCallback onPressed;
-  final IconData icon;
-  final String title;
+  final VoidCallback? onPressed;
+  final IconData? icon;
+  final String? title;
 
   MeCell({this.title, this.icon, this.onPressed});
 
@@ -33,7 +33,7 @@ class MeCell extends StatelessWidget {
                 ),
                 SizedBox(height: 8.0,),
                 new Container(
-                  child: new Text(title, style: new TextStyle(color: Colors.black87, fontSize: 14.0),),
+                  child: new Text(title!, style: new TextStyle(color: Colors.black87, fontSize: 14.0),),
                 )
               ],
             ),

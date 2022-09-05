@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/user/login.dart';
 import '../ToastShow.dart' as ToastUtils;
@@ -55,11 +54,8 @@ class InfoHeader extends StatelessWidget {
 //              ToastUtils.ToastShow().showBottomToast("去除侧");
 //            },
               leading: new Container(
-                child: new CircleAvatar(
-                    backgroundImage: CachedNetworkImageProvider(
+                child: Image.network(
                         "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1553753128974&di=2bc8807e1e33707505bd6014c4fbe56a&imgtype=0&src=http%3A%2F%2Fimg3.cache.netease.com%2Fedu%2F2011%2F8%2F9%2F20110809155116bf4a3.jpg"),
-                    radius: 20.0
-                ),
               ),
               title: new Container(
                 margin: const EdgeInsets.only(bottom: 2.0),
@@ -88,10 +84,10 @@ class InfoHeader extends StatelessWidget {
 
 class PersonDataItem extends StatelessWidget {
 
-  final String itemName;
-  final String itemData;
+  final String? itemName;
+  final String? itemData;
 
-  const PersonDataItem({Key key, this.itemName, this.itemData}) : super(key: key);
+  const PersonDataItem({Key? key, this.itemName, this.itemData}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -104,10 +100,10 @@ class PersonDataItem extends StatelessWidget {
             child: new Column(
               children: <Widget>[
                 new Container(
-                  child: new Text(itemData, style: new TextStyle(fontSize: 16.0, color: Colors.black),),
+                  child: new Text(itemData!, style: new TextStyle(fontSize: 16.0, color: Colors.black),),
                 ),
                 new Container(
-                  child: new Text(itemName, style: new TextStyle(fontSize: 12.0, color: Colors.black),),
+                  child: new Text(itemName!, style: new TextStyle(fontSize: 12.0, color: Colors.black),),
                 )
               ],
             ),

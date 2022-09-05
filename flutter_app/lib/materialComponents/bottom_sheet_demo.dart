@@ -11,7 +11,7 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
   
   _openBottomSheet() {
     _bottomSheetScaffoldKey
-      .currentState
+      .currentState!
       .showBottomSheet((BuildContext context) {
         return BottomAppBar(
           child: Container(

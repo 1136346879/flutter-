@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 class CounterHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    CounterBloc _counterBloc = CounterProvider.of(context).bloc;
+    CounterBloc? _counterBloc = CounterProvider.of(context)!.bloc;
     
     return Center(
       child: StreamBuilder(
         initialData: 0,
-        stream: _counterBloc.count,
+        stream: _counterBloc!.count,
         builder: (context, snapshot) {
           return ActionChip(
             label: Text('${snapshot.data}'),
@@ -28,13 +28,13 @@ class CounterHome extends StatelessWidget {
 class CounterActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    CounterBloc _counterBloc = CounterProvider.of(context).bloc;
+    CounterBloc? _counterBloc = CounterProvider.of(context)!.bloc;
     
     return FloatingActionButton(
       child: Icon(Icons.add),
       onPressed: () {
         // _counterBloc.log();
-        _counterBloc.counter.add(1);
+        _counterBloc!.counter.add(1);
       },
     );
   }
@@ -42,15 +42,14 @@ class CounterActionButton extends StatelessWidget {
 
 class CounterProvider extends InheritedWidget {
   final Widget child;
-  final CounterBloc bloc; 
+  final CounterBloc? bloc;
 
   CounterProvider({
-    this.child,
+    required this.child,
     this.bloc,
   }) : super(child: child);
 
-  static CounterProvider of(BuildContext context) =>
-      context.inheritFromWidgetOfExactType(CounterProvider);
+  static CounterProvider? of(BuildContext context) =>context.dependOnInheritedWidgetOfExactType();
 
   @override
   bool updateShouldNotify(CounterProvider oldWidget) {

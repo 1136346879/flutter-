@@ -45,25 +45,6 @@ class Counter extends StatelessWidget {
   }
 }
 
-class CounterProvider extends InheritedWidget {
-  final int count;
-  final VoidCallback increaseCount;
-  final Widget child;
-
-  CounterProvider({
-    this.count,
-    this.increaseCount,
-    this.child,
-  }) : super(child: child);
-
-  static CounterProvider of(BuildContext context) =>
-      context.inheritFromWidgetOfExactType(CounterProvider);
-
-  @override
-  bool updateShouldNotify(InheritedWidget oldWidget) {
-    return true;
-  }
-}
 
 class CounterModel extends Model {
   int _count = 0;

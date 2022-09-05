@@ -6,12 +6,12 @@ part 'base.g.dart';
 
 @JsonSerializable()
 class BaseResponse {
-  int code;
-  int total;
-  int totalPage;
+  int? code;
+  int? total;
+  int? totalPage;
   dynamic data;
-  String message;
-  bool success;
+  String? message;
+  bool? success;
 
   BaseResponse({this.code, this.total, this.totalPage, this.data, this.message, this.success});
 
@@ -24,10 +24,10 @@ class BaseResponse {
 
 @JsonSerializable()
 class CommonResponse {
-  int code;
+  int? code;
   dynamic data;
-  String message;
-  bool success;
+  String? message;
+  bool? success;
 
   CommonResponse();
 

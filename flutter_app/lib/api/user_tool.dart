@@ -3,22 +3,22 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 class UserTools {
-  static UserTools _instance;
+  static UserTools? _instance;
   static Future<UserTools> get instance async {
     return await getInstance();
   }
   static Future<UserTools> getInstance() async  {
     if (_instance == null) {
       _instance = new UserTools();
-      await _instance._init();
+      await _instance!._init();
 
     }
-    return _instance;
+    return _instance!;
   }
   Future _init() async {
     _spf = await SharedPreferences.getInstance();
   }
-  static SharedPreferences _spf;
+  static SharedPreferences? _spf;
 
   static bool _beforCheck() {
     if (_spf == null) {
@@ -28,15 +28,15 @@ class UserTools {
   }
 
   // 存储用户数据
-  Future<bool> setUserData(Map<String, dynamic> user) {
+  Future<bool>? setUserData(Map<String, dynamic> user) {
     if (_beforCheck()) return null;
     var jsonStr = json.encode(user);
-    return _spf.setString(ConstConfig.CURRENT_USERDATA, jsonStr);
+    return _spf!.setString(ConstConfig.CURRENT_USERDATA, jsonStr);
   }
 
   // 获取数据
   dynamic getUserData() {
-    var mapStr = _spf.getString(ConstConfig.CURRENT_USERDATA);
+    var mapStr = _spf!.getString(ConstConfig.CURRENT_USERDATA);
     if (mapStr != null) {
       var map = json.decode(mapStr);
       return map;
@@ -81,6 +81,6 @@ class UserTools {
 
   // 删除数据
   Future<bool> delectUserData() {
-    return _spf.setString(ConstConfig.CURRENT_USERDATA, null);
+    return _spf!.setString(ConstConfig.CURRENT_USERDATA, null);
   }
 }

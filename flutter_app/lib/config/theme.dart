@@ -9,7 +9,7 @@ class AppTheme {
   static int lineColor = 0xFFEEEEEE;
   static ThemeData themData = ThemeData(
     textTheme: TextTheme(
-      body1: TextStyle(
+      bodyMedium: TextStyle(
           // color: Colors.black,
           // fontWeight: FontWeight.bold,
           ),

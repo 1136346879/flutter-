@@ -1,11 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_app/model/topic.dart';
 
 class IdeaHeader extends StatefulWidget {
-  final List<Topic> topics;
-  const IdeaHeader({Key key, this.topics}) : super(key: key);
+  final List<Topic>? topics;
+  const IdeaHeader({Key? key, this.topics}) : super(key: key);
 
   @override
   _IdeaHeaderState createState() {
@@ -34,7 +33,7 @@ class _IdeaHeaderState extends State<IdeaHeader> {
                 ],
               ),
             ),
-            IdeaBanner(widget.topics),
+            IdeaBanner(widget.topics!),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
@@ -72,7 +71,7 @@ class _IdeaHeaderState extends State<IdeaHeader> {
 }
 
 class IdeaBanner extends StatelessWidget {
-  final List<Topic> topicInfos;
+  final List<Topic>? topicInfos;
 
   IdeaBanner(this.topicInfos);
 
@@ -80,24 +79,22 @@ class IdeaBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    if (topicInfos.length == 0) {
+    if (topicInfos!.length == 0) {
       return SizedBox();
     }
 
     return Container(
 //      color: Colors.white,
       child: CarouselSlider(
-        items: topicInfos.map((info) {
+        items: topicInfos!.map((info) {
           return Builder(
             builder: (BuildContext context) {
               return Row(
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image(
-                      image: CachedNetworkImageProvider(info.imageurl),
-                      width: 80.0,
-                      height: 60.0,
+                    child: Image.network(
+                       info.imageurl!,width: 200,height: 68,
                     ),
                   ),
                   Column(
@@ -114,7 +111,7 @@ class IdeaBanner extends StatelessWidget {
                       Container(
                         width: 199,
                         child: Text(
-                          info.title,
+                          info.title!,
                           overflow: TextOverflow.ellipsis,
                           softWrap: false,
                           style: TextStyle(
@@ -126,7 +123,7 @@ class IdeaBanner extends StatelessWidget {
                       Container(
                         width: 199,
                         child: Text(
-                          info.content,
+                          info.content!,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                           style: TextStyle(color: Colors.grey),
@@ -149,10 +146,10 @@ class IdeaBanner extends StatelessWidget {
 }
 
 class FindCard extends StatelessWidget {
-  final String title;
-  final Widget icon;
+  final String? title;
+  final Widget? icon;
 
-  const FindCard({Key key, this.title, this.icon}) : super(key: key);
+  const FindCard({Key? key, this.title, this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -163,12 +160,12 @@ class FindCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            icon,
+            icon!,
             SizedBox(
               width: 10.0,
             ),
             Text(
-              title,
+              title!,
             )
           ],
         ),

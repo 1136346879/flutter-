@@ -23,7 +23,7 @@ class DrawerDemo extends StatelessWidget {
                     'https://resources.ninghao.org/images/childhood-in-a-picture.jpg'),
                 fit: BoxFit.cover,
                 colorFilter: ColorFilter.mode(
-                    Colors.yellow[400].withOpacity(0.6), BlendMode.hardLight),
+                    Colors.yellow[400]?.withOpacity(0.6)??Colors.amber, BlendMode.hardLight),
               ),
             ),
           ),

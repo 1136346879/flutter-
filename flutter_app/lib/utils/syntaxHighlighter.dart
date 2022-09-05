@@ -42,14 +42,14 @@ class SyntaxHighlighterStyle {
         constantStyle: const TextStyle(color: Color(0xFF795548)));
   }
 
-  final TextStyle baseStyle;
-  final TextStyle numberStyle;
-  final TextStyle commentStyle;
-  final TextStyle keywordStyle;
-  final TextStyle stringStyle;
-  final TextStyle punctuationStyle;
-  final TextStyle classStyle;
-  final TextStyle constantStyle;
+  final TextStyle? baseStyle;
+  final TextStyle? numberStyle;
+  final TextStyle? commentStyle;
+  final TextStyle? keywordStyle;
+  final TextStyle? stringStyle;
+  final TextStyle? punctuationStyle;
+  final TextStyle? classStyle;
+  final TextStyle? constantStyle;
 }
 
 class DartSyntaxHighlighter extends SyntaxHighlighter {
@@ -58,7 +58,7 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
     _style ??= SyntaxHighlighterStyle.lightThemeStyle();
   }
 
-  SyntaxHighlighterStyle _style;
+  SyntaxHighlighterStyle? _style;
 
   static const List<String> _keywords = <String>[
     'abstract',
@@ -123,10 +123,10 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
     'bool'
   ];
 
-  String _src;
-  StringScanner _scanner;
+  late String _src;
+  StringScanner? _scanner;
 
-  List<_HighlightSpan> _spans;
+  List<_HighlightSpan>? _spans;
 
   @override
   TextSpan format(String src) {
@@ -138,13 +138,13 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
       final List<TextSpan> formattedText = <TextSpan>[];
       int currentPosition = 0;
 
-      for (_HighlightSpan span in _spans) {
+      for (_HighlightSpan span in _spans!) {
         if (currentPosition != span.start)
           formattedText
               .add(TextSpan(text: _src.substring(currentPosition, span.start)));
 
         formattedText.add(TextSpan(
-            style: span.textStyle(_style), text: span.textForSpan(_src)));
+            style: span.textStyle(_style!), text: span.textForSpan(_src)));
 
         currentPosition = span.end;
       }
@@ -152,42 +152,42 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
       if (currentPosition != _src.length)
         formattedText
             .add(TextSpan(text: _src.substring(currentPosition, _src.length)));
-      _spans.clear();
-      return TextSpan(style: _style.baseStyle, children: formattedText);
+      _spans!.clear();
+      return TextSpan(style: _style!.baseStyle, children: formattedText);
     } else {
       // Parsing failed, return with only basic formatting
-      return TextSpan(style: _style.baseStyle, text: src);
+      return TextSpan(style: _style!.baseStyle, text: src);
     }
   }
 
   bool _generateSpans() {
-    int lastLoopPosition = _scanner.position;
+    int lastLoopPosition = _scanner!.position;
 
-    while (!_scanner.isDone) {
+    while (!_scanner!.isDone) {
       // Skip White space
-      _scanner.scan(RegExp(r'\s+'));
+      _scanner!.scan(RegExp(r'\s+'));
 
       // Block comments
-      if (_scanner.scan(RegExp(r'/\*(.|\n)*\*/'))) {
-        _spans.add(_HighlightSpan(_HighlightType.comment,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'/\*(.|\n)*\*/'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.comment,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Line comments
-      if (_scanner.scan('//')) {
-        final int startComment = _scanner.lastMatch.start;
+      if (_scanner!.scan('//')) {
+        final int startComment = _scanner!.lastMatch!.start;
 
         bool eof = false;
         int endComment;
-        if (_scanner.scan(RegExp(r'.*\n'))) {
-          endComment = _scanner.lastMatch.end - 1;
+        if (_scanner!.scan(RegExp(r'.*\n'))) {
+          endComment = _scanner!.lastMatch!.end - 1;
         } else {
           eof = true;
           endComment = _src.length;
         }
 
-        _spans.add(
+        _spans!.add(
             _HighlightSpan(_HighlightType.comment, startComment, endComment));
 
         if (eof) break;
@@ -196,80 +196,80 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
       }
 
       // Raw r"String"
-      if (_scanner.scan(RegExp(r'r".*"'))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'r".*"'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.string,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Raw r'String'
-      if (_scanner.scan(RegExp(r"r'.*'"))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r"r'.*'"))) {
+        _spans!.add(_HighlightSpan(_HighlightType.string,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Multiline """String"""
-      if (_scanner.scan(RegExp(r'"""(?:[^"\\]|\\(.|\n))*"""'))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'"""(?:[^"\\]|\\(.|\n))*"""'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.string,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Multiline '''String'''
-      if (_scanner.scan(RegExp(r"'''(?:[^'\\]|\\(.|\n))*'''"))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r"'''(?:[^'\\]|\\(.|\n))*'''"))) {
+        _spans!.add(_HighlightSpan(_HighlightType.string,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // "String"
-      if (_scanner.scan(RegExp(r'"(?:[^"\\]|\\.)*"'))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'"(?:[^"\\]|\\.)*"'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.string,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // 'String'
-      if (_scanner.scan(RegExp(r"'(?:[^'\\]|\\.)*'"))) {
-        _spans.add(_HighlightSpan(_HighlightType.string,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r"'(?:[^'\\]|\\.)*'"))) {
+        _spans!.add(_HighlightSpan(_HighlightType.string,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Double
-      if (_scanner.scan(RegExp(r'\d+\.\d+'))) {
-        _spans.add(_HighlightSpan(_HighlightType.number,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'\d+\.\d+'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.number,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Integer
-      if (_scanner.scan(RegExp(r'\d+'))) {
-        _spans.add(_HighlightSpan(_HighlightType.number,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'\d+'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.number,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Punctuation
-      if (_scanner.scan(RegExp(r'[\[\]{}().!=<>&\|\?\+\-\*/%\^~;:,]'))) {
-        _spans.add(_HighlightSpan(_HighlightType.punctuation,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'[\[\]{}().!=<>&\|\?\+\-\*/%\^~;:,]'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.punctuation,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Meta data
-      if (_scanner.scan(RegExp(r'@\w+'))) {
-        _spans.add(_HighlightSpan(_HighlightType.keyword,
-            _scanner.lastMatch.start, _scanner.lastMatch.end));
+      if (_scanner!.scan(RegExp(r'@\w+'))) {
+        _spans!.add(_HighlightSpan(_HighlightType.keyword,
+            _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         continue;
       }
 
       // Words
-      if (_scanner.scan(RegExp(r'\w+'))) {
-        _HighlightType type;
+      if (_scanner!.scan(RegExp(r'\w+'))) {
+        _HighlightType? type;
 
-        String word = _scanner.lastMatch[0];
+        String word = _scanner!.lastMatch![0]!;
         if (word.startsWith('_')) word = word.substring(1);
 
         if (_keywords.contains(word))
@@ -284,17 +284,17 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
           type = _HighlightType.constant;
 
         if (type != null) {
-          _spans.add(_HighlightSpan(
-              type, _scanner.lastMatch.start, _scanner.lastMatch.end));
+          _spans!.add(_HighlightSpan(
+              type, _scanner!.lastMatch!.start, _scanner!.lastMatch!.end));
         }
       }
 
       // Check if this loop did anything
-      if (lastLoopPosition == _scanner.position) {
+      if (lastLoopPosition == _scanner!.position) {
         // Failed to parse this file, abort gracefully
         return false;
       }
-      lastLoopPosition = _scanner.position;
+      lastLoopPosition = _scanner!.position;
     }
 
     _simplify();
@@ -302,12 +302,12 @@ class DartSyntaxHighlighter extends SyntaxHighlighter {
   }
 
   void _simplify() {
-    for (int i = _spans.length - 2; i >= 0; i -= 1) {
-      if (_spans[i].type == _spans[i + 1].type &&
-          _spans[i].end == _spans[i + 1].start) {
-        _spans[i] =
-            _HighlightSpan(_spans[i].type, _spans[i].start, _spans[i + 1].end);
-        _spans.removeAt(i + 1);
+    for (int i = _spans!.length - 2; i >= 0; i -= 1) {
+      if (_spans![i].type == _spans![i + 1].type &&
+          _spans![i].end == _spans![i + 1].start) {
+        _spans![i] =
+            _HighlightSpan(_spans![i].type, _spans![i].start, _spans![i + 1].end);
+        _spans!.removeAt(i + 1);
       }
     }
   }
@@ -343,20 +343,20 @@ class _HighlightSpan {
 
   TextStyle textStyle(SyntaxHighlighterStyle style) {
     if (type == _HighlightType.number)
-      return style.numberStyle;
+      return style.numberStyle!;
     else if (type == _HighlightType.comment)
-      return style.commentStyle;
+      return style.commentStyle!;
     else if (type == _HighlightType.keyword)
-      return style.keywordStyle;
+      return style.keywordStyle!;
     else if (type == _HighlightType.string)
-      return style.stringStyle;
+      return style.stringStyle!;
     else if (type == _HighlightType.punctuation)
-      return style.punctuationStyle;
+      return style.punctuationStyle!;
     else if (type == _HighlightType.klass)
-      return style.classStyle;
+      return style.classStyle!;
     else if (type == _HighlightType.constant)
-      return style.constantStyle;
+      return style.constantStyle!;
     else
-      return style.baseStyle;
+      return style.baseStyle!;
   }
 }

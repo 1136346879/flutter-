@@ -4,14 +4,14 @@ import 'package:flutter_app/model/author.dart';
 
 class Question {
 
-  int id;
-  String type;
-  String title;
-  String excerpt;
-  int answer_count;
-  int follower_count;
-  int comment_count;
-  Author author;
+  int? id;
+  String? type;
+  String? title;
+  String? excerpt;
+  int? answer_count;
+  int? follower_count;
+  int? comment_count;
+  Author? author;
 
   Question.fromJson(data) {
     id = data['id'];

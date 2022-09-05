@@ -19,8 +19,8 @@ class I18nDemo extends StatelessWidget {
             Text(
               // Localizations.of(context, NinghaoDemoLocalizations).title,
               // NinghaoDemoLocalizations.of(context).title,
-              NinghaoDemoLocalizations.of(context).greet('ninghao'),
-              style: Theme.of(context).textTheme.title,
+              NinghaoDemoLocalizations.of(context)!.greet('ninghao'),
+              style: Theme.of(context).textTheme.titleMedium,
             )
           ],
         ),

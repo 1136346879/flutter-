@@ -21,14 +21,14 @@ class StreamDemoHome extends StatefulWidget {
 }
 
 class _StreamDemoHomeState extends State<StreamDemoHome> {
-  StreamSubscription _streamDemoSubscription;
-  StreamController<String> _streamDemo;
-  StreamSink _sinkDemo;
+  StreamSubscription? _streamDemoSubscription;
+  StreamController<String>? _streamDemo;
+  StreamSink? _sinkDemo;
   String _data = '...';
 
   @override
   void dispose() {
-    _streamDemo.close();
+    _streamDemo!.close();
     super.dispose();
   }
 
@@ -39,13 +39,13 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
     print('Create a stream.');
     // Stream<String> _streamDemo = Stream.fromFuture(fetchData());
     _streamDemo = StreamController.broadcast();
-    _sinkDemo = _streamDemo.sink;
+    _sinkDemo = _streamDemo!.sink;
 
     print('Start listening on a stream.');
     _streamDemoSubscription =
-        _streamDemo.stream.listen(onData, onError: onError, onDone: onDone);
+        _streamDemo!.stream.listen(onData, onError: onError, onDone: onDone);
     
-    _streamDemo.stream.listen(onDataTwo, onError: onError, onDone: onDone);
+    _streamDemo!.stream.listen(onDataTwo, onError: onError, onDone: onDone);
 
     print('Initialize completed.');
   }
@@ -71,17 +71,17 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
 
   void _pauseStream() {
     print('Pause subscription');
-    _streamDemoSubscription.pause();
+    _streamDemoSubscription!.pause();
   }
 
   void _resumeStream() {
     print('Resume subscription');
-    _streamDemoSubscription.resume();
+    _streamDemoSubscription!.resume();
   }
 
   void _cancelStream() {
     print('Cancel subscription');
-    _streamDemoSubscription.cancel();
+    _streamDemoSubscription!.cancel();
   }
 
   void _addDataToStream() async {
@@ -89,7 +89,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
 
     String data = await fetchData();
     // _streamDemo.add(data);
-    _sinkDemo.add(data);
+    _sinkDemo!.add(data);
   }
 
   Future<String> fetchData() async {
@@ -107,7 +107,7 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
           children: <Widget>[
             // Text(_data),
             StreamBuilder(
-              stream: _streamDemo.stream,
+              stream: _streamDemo!.stream,
               initialData: '...',
               builder: (context, snapshot) {
                 return Text('${snapshot.data}');

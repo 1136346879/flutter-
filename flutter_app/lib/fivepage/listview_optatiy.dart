@@ -55,6 +55,7 @@ class _OpacityPageState extends State<OpacityPage> {
                   //滚动且是列表滚动的时候
                   _onScroll(scrollNotification.metrics.pixels);
                 }
+                return false;
               },
               child: ListView(
                 children: <Widget>[

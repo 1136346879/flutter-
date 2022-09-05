@@ -3,16 +3,16 @@ import 'package:dio/dio.dart';
 import 'app_config.dart';
 
 class HttpUtil {
-  static HttpUtil instance;
-  Dio dio;
-  BaseOptions options;
+  static HttpUtil? instance;
+  Dio? dio;
+  BaseOptions? options;
 
   static HttpUtil getInstance() {
     print('getInstance');
     if (instance == null) {
       instance = new HttpUtil();
     }
-    return instance;
+    return instance!;
   }
   HttpUtil() {
     dio = new Dio()
@@ -29,7 +29,7 @@ class HttpUtil {
 class HeaderInterceptor extends Interceptor {
   @override
   onRequest(RequestOptions options) {
-    final token = AppConfig.userTools.getUserToken();
+    final token = AppConfig.userTools?.getUserToken()??"";
     if (token != null && token.length > 0) {
       options.headers.putIfAbsent('Authorization', () => 'Bearer' + ' ' + token);
     }

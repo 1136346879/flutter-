@@ -12,7 +12,7 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
   TimeOfDay selectedTime = TimeOfDay(hour: 9, minute: 30);
   
   Future<void> _selectDate() async {
-    final DateTime date = await showDatePicker(
+    final DateTime? date = await showDatePicker(
       context: context,
       initialDate: selectedDate,
       firstDate: DateTime(1900),
@@ -27,7 +27,7 @@ class _DateTimeDemoState extends State<DateTimeDemo> {
   }
 
   Future<void> _selectTime() async {
-    final TimeOfDay time = await showTimePicker(
+    final TimeOfDay? time = await showTimePicker(
       context: context,
       initialTime: selectedTime,
     );

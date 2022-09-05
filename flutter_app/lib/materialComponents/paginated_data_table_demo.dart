@@ -21,9 +21,9 @@ class PostDataSource extends DataTableSource {
     return DataRow.byIndex(
       index: index,
       cells: <DataCell>[
-        DataCell(Text(post.title)),
-        DataCell(Text(post.author)),
-        DataCell(Image.network(post.imageUrl)),
+        DataCell(Text(post.title!)),
+        DataCell(Text(post.author!)),
+        DataCell(Image.network(post.imageUrl!)),
       ],
     );
   }
@@ -52,7 +52,7 @@ class PaginatedDataTableDemo extends StatefulWidget {
 }
 
 class _PaginatedDataTableDemoState extends State<PaginatedDataTableDemo> {
-  int _sortColumnIndex;
+  int? _sortColumnIndex;
   bool _sortAscending = true;
 
   final PostDataSource _postsDataSource = PostDataSource();

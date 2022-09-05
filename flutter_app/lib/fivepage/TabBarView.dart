@@ -4,10 +4,10 @@ import 'package:flutter_app/list.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class TabBarViewMe extends StatefulWidget {
-  TabBarViewMe({Key key, @required this.id, @required this.title})
+  TabBarViewMe({Key? key, @required this.id, @required this.title})
       : super(key: key);
-  final String id;
-  final String title;
+  final String? id;
+  final String? title;
 
   @override
   _MovieDetailState createState() {
