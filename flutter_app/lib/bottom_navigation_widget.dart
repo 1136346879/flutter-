@@ -12,29 +12,10 @@ import 'package:flutter_app/pagedetail/feedbackDetail.dart';
 import 'package:flutter_app/pagedetail/welcomePage.dart';
 import 'package:flutter_app/everypage/every_page.dart';
 import 'package:flutter_app/me/me_page.dart';
-import 'package:flutter_app/test/tabbarDemo.dart';
+
 /**
  * 主页
  */
-//class name extends StatefulWidget{
-//  @override
-//  State<StatefulWidget> createState() {
-//   return _nameState();
-//  }
-//
-//}
-//
-//class _nameState  extends State<name> {
-//  @override
-//  Widget build(BuildContext context) {
-//    return Container(
-//      child: child,
-//    );
-//  }
-//
-//
-//
-//}
 
 class BottomNavigationWidget extends StatefulWidget {
   @override
@@ -53,7 +34,6 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
     super.initState();
     list
       ..add(HomeScreen())
-//       ..add(TabBarDemo())
       ..add(emile_screen())
       ..add(pages_screen())
       ..add(airplay_screen())
