@@ -5,7 +5,6 @@ import 'package:flutter_app/rxdart/rxdart_demo.dart';
 import 'package:flutter_app/everypage/form_demo.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_app/i18n/i18n_demo.dart';
-import 'package:flutter_app/test/test_demo.dart';
 import 'package:flutter_app/animation/animation_demo.dart';
 import 'package:flutter_app/bloc/bloc_demo.dart';
 import 'package:flutter_app/http/http_demo.dart';
