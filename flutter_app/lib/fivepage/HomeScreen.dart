@@ -28,7 +28,7 @@ final loginButton = FlatButton.icon(
     
     final loginButton1 = FlatButton.icon(
     onPressed: () {
-              ToastUtil.ToastShow().showTopToast("底部toast提示");
+              ToastUtil.ToastShow().showBottomToast("底部toast提示");
     },
     icon: Icon(
       Icons.edit,
@@ -82,16 +82,6 @@ final loginButton = FlatButton.icon(
       color: Colors.blue,
     ),
     label: Text('页面之间跳转，带参数和不带参数', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-    // final loginButton9 = FlatButton.icon(
-    // onPressed: () {
-    //           ToastUtil.ToastShow().showTopToast("图片展示");
-              
-    // },
-    // icon: Icon(
-    //   Icons.edit,
-    //   color: Colors.blue,
-    // ),
-    // label: Text('网络图片展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
 
 Widget barSearch(BuildContext context) {
   return new Row(
@@ -156,29 +146,28 @@ class LogoAppState extends State<HomeScreen> {
               loginButton8,
               // loginButton9,
               flatButton0(context),
-              flatButton(context)
-            // Text('首页',),
-            // new Opacity(
-            //     opacity: _visible ? 1.0 : 0.0,
-            //     child: new Center(
-            //       child: new GestureDetector(
-            //         onTap: () {
-            //             // Navigator.push(context,
-            //   // MaterialPageRoute(builder: (BuildContext ctx) {
-            //     // return new Index();} ));
-            //           //每次点击文本就在隐藏和显示之间切换
-            //           _visible = _visible ? false : true;
-            //           setState(() {});
-            //         },
-            //         child: new Text(
-            //           'home，当你点击我的时候 你会失去我',
-            //           textDirection: TextDirection.ltr,
-            //           style: const TextStyle(
-            //               fontWeight: FontWeight.w900,
-            //               fontStyle: FontStyle.italic),
-            //         ),
-            //       ),
-            //     ))
+              flatButton(context),
+            new Opacity(
+                opacity: _visible ? 1.0 : 0.0,
+                child: new Center(
+                  child: new GestureDetector(
+                    onTap: () {
+                        // Navigator.push(context,
+              // MaterialPageRoute(builder: (BuildContext ctx) {
+                // return new Index();} ));
+                      //每次点击文本就在隐藏和显示之间切换
+                      _visible = _visible ? false : true;
+                      setState(() {});
+                    },
+                    child: new Text(
+                      'home，当你点击我的时候 你会失去我',
+                      textDirection: TextDirection.ltr,
+                      style: const TextStyle(
+                          fontWeight: FontWeight.w900,
+                          fontStyle: FontStyle.italic),
+                    ),
+                  ),
+                ))
           ],
                  )
         // )
@@ -224,8 +213,8 @@ class LogoAppState extends State<HomeScreen> {
   onPressed: () {
 //    _initX5Webview();
             ToastUtil.ToastShow().showTopToast("webview加载");
-//               AppNavigator.pushWeb(context, 'https://github.com/1136346879/flutter-', 'Github');
-               AppNavigator.pushWeb(context, 'ko/index.html', 'Github');
+              AppNavigator.pushWeb(context, 'https://github.com/1136346879/flutter-', 'Github');
+               // AppNavigator.pushWeb(context, 'ko/index.html', 'Github');
 //               AppNavigator.pushWeb(context, 'ko/private_policy.html', 'Github');
 //                 this.openEnvSelectMenu();
   },
@@ -308,16 +297,16 @@ class LogoAppState extends State<HomeScreen> {
     Navigator.pop(context);
     if (message != null) {
       Scaffold.of(context).showSnackBar(new SnackBar(
-        duration:const Duration(milliseconds: 1000),
+        // duration:const Duration(milliseconds: 1000),
         content: new Text(message,style: TextStyle(color: textColor,fontSize: fontSize)),
         backgroundColor: backgroundColor,
         // animation: ,
-        // action: new SnackBarAction(
-        // label: '取消',
-        //     onPressed: () {
-        //         // do something to undo
-        //     }
-        //  ),
+        action: new SnackBarAction(
+        label: '取消',
+            onPressed: () {
+                // do something to undo
+            }
+         ),
       ));
     }
   }
