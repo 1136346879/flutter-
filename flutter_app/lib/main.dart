@@ -19,12 +19,13 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: createMaterialColor(Colors.white),
+        primarySwatch: createMaterialColor(Colors.orange),
       ),
       home: BottomNavigationWidget(), //app  首页框架搭建
     );
   }
 
+  /// 创建MaterialColor
   MaterialColor createMaterialColor(Color color) {
     List strengths = <double>[.05];
     Map<int, Color> swatch = <int, Color>{};

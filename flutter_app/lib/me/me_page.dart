@@ -234,7 +234,7 @@ class MePage extends StatelessWidget {
                               foregroundDecoration:new BoxDecoration(
                                   image: new DecorationImage(
                                     image: new NetworkImage("https://pic3.zhimg.com/50/v2-1a6124605fa761a6c20da9f83a10530b_400x224.jpg"),
-                                    centerSlice: new Rect.fromLTRB(270.0, 180.0, 1360.0, 730.0),
+                                    // centerSlice: new Rect.fromLTRB(270.0, 180.0, 1360.0, 730.0),
                                   ),
                                   borderRadius: const BorderRadius.all(const Radius.circular(6.0))
                               ),
@@ -249,7 +249,8 @@ class MePage extends StatelessWidget {
                               foregroundDecoration:new BoxDecoration(
                                   image: new DecorationImage(
                                     image: new NetworkImage("https://pic4.zhimg.com/50/v2-c890cea29ebc2a0ed32e27796f1f4895_400x224.jpg"),
-                                    centerSlice: new Rect.fromLTRB(270.0, 180.0, 1360.0, 730.0),
+                                    // centerSlice: new Rect.fromLTRB(270.0, 180.0, 1360.0, 730.0),
+                                    // fit: BoxFit.fill
                                   ),
                                   borderRadius: const BorderRadius.all(const Radius.circular(6.0))
                               ),
