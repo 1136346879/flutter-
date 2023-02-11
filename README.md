@@ -95,3 +95,10 @@ flutter开发中遇到的
 		升级之后  caffold组件必须加上padding，项目才能不报错，
 		但是升级之后，遇到一个问题： 而我引入的webview插件不能兼容，插件的Scaffold组件没有升级呢，没有padding
 		所以我这边又换回去了flutter Sdk  v1.12.13+hotfix.8版本
+		
+项目运行如报如下错误：
+		Error: Cannot run with sound null safety, because the following dependencies
+		don't support null safety:
+		
+请使用命令运行： flutter run --no-sound-null-safety
+
