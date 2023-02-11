@@ -136,9 +136,12 @@ class IdeaBanner extends StatelessWidget {
             },
           );
         }).toList(),
-        aspectRatio: 5,
+
 //        interval: const Duration(seconds: 2),
-        autoPlay: true,
+         options: CarouselOptions(
+           autoPlay: true,
+           aspectRatio: 5,
+      ),
 //        distortion: false,
       ),
     );

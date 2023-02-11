@@ -2,11 +2,10 @@
 import 'dart:async';
 import '../data/base.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:rxdart/rxdart.dart';
 import 'httpUtil.dart';
 
-Observable<BaseResponse> get(String url, {Map<String, dynamic>? params}) =>
-    Observable.fromFuture(_get(url, params: params)).delay(Duration(milliseconds: 500)).asBroadcastStream();
+Future<BaseResponse> get(String url, {Map<String, dynamic>? params}) =>
+    _get(url, params: params);//.delay(Duration(milliseconds: 500)).asBroadcastStream();
 
 Future<BaseResponse> _get(String url, {Map<String, dynamic>? params}) async {
   var response = await HttpUtil().dio!.get(url, queryParameters: params);
@@ -16,12 +15,12 @@ Future<BaseResponse> _get(String url, {Map<String, dynamic>? params}) async {
         msg: res.message!
     );
   }
-  return res;
+  return Future.value(res);
 }
 
 
-Observable<BaseResponse> post(String url,{dynamic body,Map<String, dynamic>? queryParameters}) =>
-    Observable.fromFuture(_post(url, body,queryParameters: queryParameters)).delay(Duration(milliseconds: 500)).asBroadcastStream();
+Future<BaseResponse> post(String url,{dynamic body,Map<String, dynamic>? queryParameters}) =>
+    _post(url, body,queryParameters: queryParameters);//.delay(Duration(milliseconds: 500)).asBroadcastStream()
 
 Future<BaseResponse> _post(String url, dynamic body,{ Map<String, dynamic>? queryParameters}) async {
   var response = await HttpUtil().dio!.post(url, data: body, queryParameters: queryParameters);
@@ -33,5 +32,5 @@ Future<BaseResponse> _post(String url, dynamic body,{ Map<String, dynamic>? quer
         gravity: ToastGravity.CENTER
     );
   }
-  return res;
+  return Future.value(res);
 }

@@ -23,11 +23,11 @@ dependencies:
   fluttertoast:
     path: ../plugin/fluttertoast-8.1.2
   fluro: ^1.4.0
-  rxdart: ^0.18.1
-  scoped_model: ^1.0.1
+  rxdart: ^0.27.7
+  scoped_model: ^2.0.0
   http: ^0.13.5
   english_words: ^3.1.0
-  carousel_slider: ^1.0.1
+  carousel_slider: ^4.2.1
   flutter_webview_plugin: ^0.4.0
 #    git: https://github.com/nuc134r/flutter_webview_plugin.git
   #share: ^0.5.3
