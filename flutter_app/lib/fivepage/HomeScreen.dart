@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
     return new LogoAppState();
   }
 }
-final loginButton = FlatButton.icon(
+final loginButton = TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("listview下拉刷新和加载更多");
     },
@@ -26,7 +26,7 @@ final loginButton = FlatButton.icon(
     ),
     label: Text('listview下拉刷新和加载更多', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
     
-    final loginButton1 = FlatButton.icon(
+    final loginButton1 = TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showBottomToast("底部toast提示");
     },
@@ -37,7 +37,7 @@ final loginButton = FlatButton.icon(
     label: Text('toast提示', style: TextStyle(color: Colors.blue, fontSize: 14.0))
     );
 
-    final loginButton4 = FlatButton.icon(
+    final loginButton4 = TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("网络图片及本地图片加载");
               
@@ -47,7 +47,7 @@ final loginButton = FlatButton.icon(
       color: Colors.blue,
     ),
     label: Text('网络图片及本地图片加载', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-    final loginButton5 = FlatButton.icon(
+    final loginButton5 = TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("就是本页面哦");
     },
@@ -56,7 +56,7 @@ final loginButton = FlatButton.icon(
       color: Colors.blue,
     ),
     label: Text('tabbarview切换联动页面切换', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-   final loginButton7 = FlatButton.icon(
+   final loginButton7 = TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("网络访问接口解析及数据展示");
               
@@ -66,7 +66,7 @@ final loginButton = FlatButton.icon(
       color: Colors.blue,
     ),
     label: Text('网络访问接口解析及数据展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
-    final loginButton8 = FlatButton.icon(
+    final loginButton8 = TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("页面之间跳转，带参数和不带参数");
                  // Navigator.push(context,
@@ -89,8 +89,8 @@ Widget barSearch(BuildContext context) {
       Expanded(
         child: Padding(
           padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-          child: new FlatButton.icon(
-            color: Colors.black12,
+          child: new TextButton.icon(
+            // color: Colors.black12,
             onPressed: () {
               ToastUtil.ToastShow().showBottomToast("去搜索页面");
             },
@@ -175,9 +175,9 @@ class LogoAppState extends State<HomeScreen> {
 
          
   }
-  
- FlatButton flatButton6(BuildContext context) {
-    return    FlatButton.icon(
+
+  TextButton flatButton6(BuildContext context) {
+    return    TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("gridview展示");
                 Navigator.push(context,
@@ -192,8 +192,8 @@ class LogoAppState extends State<HomeScreen> {
     label: Text('gridview展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
    
   }
- FlatButton flatButton0(BuildContext context) {
-    return FlatButton.icon(
+  TextButton flatButton0(BuildContext context) {
+    return TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("listview和gridview滑动事件冲突解决");
                  Navigator.push(context,
@@ -208,8 +208,8 @@ class LogoAppState extends State<HomeScreen> {
     label: Text('listview和gridview滑动事件冲突解决', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
 
   }
-  FlatButton flatButton(BuildContext context) {
-    return FlatButton.icon(
+  TextButton flatButton(BuildContext context) {
+    return TextButton.icon(
   onPressed: () {
 //    _initX5Webview();
             ToastUtil.ToastShow().showTopToast("webview加载");
@@ -224,8 +224,8 @@ class LogoAppState extends State<HomeScreen> {
   ),
   label: Text('webview加载', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
   }
- FlatButton flatButton2() {
-    return FlatButton.icon(
+  TextButton flatButton2() {
+    return TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("底部菜单栏展示");
                  this.openEnvSelectMenu();
@@ -238,8 +238,8 @@ class LogoAppState extends State<HomeScreen> {
     label: Text('底部菜单栏展示', style: TextStyle(color: Colors.blue, fontSize: 14.0)));
    
   }
- FlatButton flatButton3() {
-    return  FlatButton.icon(
+  TextButton flatButton3() {
+    return  TextButton.icon(
     onPressed: () {
               ToastUtil.ToastShow().showTopToast("banner轮播图展示");
               Navigator.push(context,
@@ -296,7 +296,7 @@ class LogoAppState extends State<HomeScreen> {
   void popShort([message,textColor,fontSize,backgroundColor]) {
     Navigator.pop(context);
     if (message != null) {
-      Scaffold.of(context).showSnackBar(new SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(new SnackBar(
         // duration:const Duration(milliseconds: 1000),
         content: new Text(message,style: TextStyle(color: textColor,fontSize: fontSize)),
         backgroundColor: backgroundColor,

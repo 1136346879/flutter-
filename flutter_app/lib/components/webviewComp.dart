@@ -17,7 +17,7 @@ class Index extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WebviewScaffold(
-      url: this.url,
+      url: this.url!,
       appBar: new AppBar(
         title: Header.Index(this.title??""),
       ),

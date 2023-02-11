@@ -54,6 +54,6 @@ class UserTools {
 
  // 删除数据
  Future<bool> delectUserData() {
-  return _sharedPreferences!.setString(ConstConfig.CURRENT_USERDATA, null);
+  return _sharedPreferences!.setString(ConstConfig.CURRENT_USERDATA, '');
  }
 }

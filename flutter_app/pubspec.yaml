@@ -11,7 +11,8 @@ version: 1.0.0+1
 
 environment:
   sdk: ">=2.12.0 <3.2.0"
-
+#dependency_overrides:
+#    fluttertoast: ^8.1.2
 dependencies:
   flutter:
     sdk: flutter
@@ -19,15 +20,16 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-  fluttertoast: ^8.0.9
+  fluttertoast:
+    path: ../plugin/fluttertoast-8.1.2
   fluro: ^1.4.0
   rxdart: ^0.18.1
   scoped_model: ^1.0.1
-  http: ^0.12.0
+  http: ^0.13.5
   english_words: ^3.1.0
   carousel_slider: ^1.0.1
-  flutter_webview_plugin:
-    git: https://github.com/nuc134r/flutter_webview_plugin.git
+  flutter_webview_plugin: ^0.4.0
+#    git: https://github.com/nuc134r/flutter_webview_plugin.git
   #share: ^0.5.3
   url_launcher: ^6.0.8
   flutter_markdown: ^0.6.10+3
@@ -37,10 +39,10 @@ dependencies:
   pull_to_refresh: ^1.1.6 #加载更多
   intl: ^0.17.0
   flutter_screenutil: ^0.5.1
-  flutter_swiper : ^1.1.4  #轮播图
+  flutter_swiper : ^1.1.6  #轮播图
   multi_image_picker: ^4.6.1
    # leancloud  数据存储 已经包含shared_preferences #简单数据存储  dio: ^2.0.14 json_serializable: ^2.0.0
-  leancloud_storage: ^0.2.9
+  leancloud_storage: ^0.7.10
   flutter_localizations:
         sdk: flutter
 

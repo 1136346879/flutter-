@@ -79,7 +79,7 @@ class LoginState extends State<LoginForm> {
           Navigator.pop(context, it!.username);
         });
       });
-      Scaffold.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Logining...'),
       ));
     } else {
@@ -142,10 +142,10 @@ class LoginState extends State<LoginForm> {
               height: 400,
               child: Column(
                 children: <Widget>[
-                  RaisedButton(
-                    color: Theme.of(context).accentColor,
+                  ElevatedButton(
+                    // color: Theme.of(context).accentColor,
                     child: Text('登录', style: TextStyle(color: Colors.white)),
-                    elevation: 0.0,
+                    // elevation: 0.0,
                     onPressed: submitRegisterForm,
                   ),
 //                  FlatButton(

@@ -43,7 +43,7 @@ class RegisterFormState extends State<RegisterForm> {
       debugPrint('username: $username');
       debugPrint('password: $password');
 
-      Scaffold.of(context).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Registering...'),
         )
@@ -101,10 +101,10 @@ class RegisterFormState extends State<RegisterForm> {
           SizedBox(height: 32.0,),
           Container(
             width: double.infinity,
-            child: RaisedButton(
-              color: Theme.of(context).accentColor,
+            child: ElevatedButton(
+              // color: Theme.of(context).accentColor,
               child: Text('Register', style: TextStyle(color: Colors.white)),
-              elevation: 0.0,
+              // elevation: 0.0,
               onPressed: submitRegisterForm,              
             ),
           ),

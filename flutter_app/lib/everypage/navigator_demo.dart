@@ -8,11 +8,11 @@ class NavigatorDemo extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FlatButton(
+            ElevatedButton(
               child: Text('Home'),
               onPressed: null,
             ),
-            FlatButton(
+            ElevatedButton(
               child: Text('About'),
               onPressed: () {
                 Navigator.pushNamed(context, '/about');

@@ -84,11 +84,11 @@ class _BottomSheetDemoState extends State<BottomSheetDemo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                FlatButton(
+                TextButton(
                   child: Text('Open BottomSheet'),
                   onPressed: _openBottomSheet,
                 ),
-                FlatButton(
+                TextButton(
                   child: Text('Modal BottomSheet'),
                   onPressed: _openModalBottomSheet,
                 ),

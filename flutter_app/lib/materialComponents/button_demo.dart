@@ -6,18 +6,18 @@ class ButtonDemo extends StatelessWidget {
     final Widget flatButtonDemo = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        FlatButton(
+        TextButton(
           child: Text('Button'),
           onPressed: () {},
-          splashColor: Colors.grey,
-          textColor: Theme.of(context).accentColor,
+          // splashColor: Colors.grey,
+          // textColor: Theme.of(context).accentColor,
         ),
-        FlatButton.icon(
+        TextButton.icon(
           icon: Icon(Icons.add),
           label: Text('Button'),
           onPressed: () {},
-          splashColor: Colors.grey,
-          textColor: Theme.of(context).accentColor,
+          // splashColor: Colors.grey,
+          // textColor: Theme.of(context).accentColor,
         ),
       ],
     );
@@ -36,24 +36,24 @@ class ButtonDemo extends StatelessWidget {
               shape: StadiumBorder(),
             ),
           ),
-          child: RaisedButton(
+          child: ElevatedButton(
             child: Text('Button'),
             onPressed: () {},
-            splashColor: Colors.grey,
-            elevation: 0.0,
+            // splashColor: Colors.grey,
+            // elevation: 0.0,
             // color: Theme.of(context).accentColor,
             // textColor: Colors.white,
             // textTheme: ButtonTextTheme.primary,
           ),
         ),
         SizedBox(width: 16.0,),
-        RaisedButton.icon(
+        ElevatedButton.icon(
           icon: Icon(Icons.add),
           label: Text('Button'),
           onPressed: () {},
-          splashColor: Colors.grey,
-          elevation: 12.0,
-          textColor: Theme.of(context).accentColor,
+          // splashColor: Colors.grey,
+          // elevation: 12.0,
+          // textColor: Theme.of(context).accentColor,
         ),
       ],
     );

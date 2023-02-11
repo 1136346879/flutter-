@@ -17,7 +17,7 @@ class MeCell extends StatelessWidget {
 
     return new Container(
       width: MediaQuery.of(context).size.width / 4,
-      child: new FlatButton(
+      child: new ElevatedButton(
           onPressed: onPressed,
           child: new Container(
             child: new Column(

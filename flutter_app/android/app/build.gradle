@@ -25,7 +25,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
     sourceSets {
@@ -42,7 +42,7 @@ android {
     defaultConfig {
         applicationId "com.example.flutterapp"
         minSdkVersion 16
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

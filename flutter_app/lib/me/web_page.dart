@@ -25,7 +25,7 @@ class _WebPageState extends State<WebPage> {
   @override
   Widget build(BuildContext context) {
     return WebviewScaffold(
-      url: this.widget.url,
+      url: this.widget.url!,
         withZoom:  true,
         withJavascript: true,
         allowFileURLs:true,

@@ -28,7 +28,7 @@ class HttpUtil {
 
 class HeaderInterceptor extends Interceptor {
   @override
-  onRequest(RequestOptions options) {
+  onRequest(RequestOptions options,RequestInterceptorHandler handler,) {
     final token = AppConfig.userTools?.getUserToken()??"";
     if (token != null && token.length > 0) {
       options.headers.putIfAbsent('Authorization', () => 'Bearer' + ' ' + token);
@@ -40,7 +40,7 @@ class HeaderInterceptor extends Interceptor {
 //    }
 //    options.headers.putIfAbsent('Content-Type', () => 'application/json;charset=UTF-8');
 
-    return super.onRequest(options);
+    return super.onRequest(options,handler);
   }
 }
 

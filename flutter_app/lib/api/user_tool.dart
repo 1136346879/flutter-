@@ -81,6 +81,6 @@ class UserTools {
 
   // 删除数据
   Future<bool> delectUserData() {
-    return _spf!.setString(ConstConfig.CURRENT_USERDATA, null);
+    return _spf!.setString(ConstConfig.CURRENT_USERDATA, '');
   }
 }

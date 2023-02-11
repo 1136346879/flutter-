@@ -23,13 +23,13 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
           title: Text('AlertDialog'),
           content: Text('Are you sure about this?'),
           actions: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text('Cancel'),
               onPressed: () {
                 Navigator.pop(context, Action.Cancel);
               },
             ),
-            FlatButton(
+            TextButton(
               child: Text('Ok'),
               onPressed: () {
                 Navigator.pop(context, Action.Ok);
@@ -72,7 +72,7 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
+                ElevatedButton(
                   child: Text('Open AlertDialog'),
                   onPressed: _openAlertDialog,
                 ),

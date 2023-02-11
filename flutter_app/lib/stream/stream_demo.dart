@@ -116,19 +116,19 @@ class _StreamDemoHomeState extends State<StreamDemoHome> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                FlatButton(
+                TextButton(
                   child: Text('Add'),
                   onPressed: _addDataToStream,
                 ),
-                FlatButton(
+                TextButton(
                   child: Text('Pause'),
                   onPressed: _pauseStream,
                 ),
-                FlatButton(
+                TextButton(
                   child: Text('Resume'),
                   onPressed: _resumeStream,
                 ),
-                FlatButton(
+                TextButton(
                   child: Text('Cancel'),
                   onPressed: _cancelStream,
                 ),

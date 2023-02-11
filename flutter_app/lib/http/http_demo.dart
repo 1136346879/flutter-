@@ -53,7 +53,7 @@ class _HttpDemoHomeState extends State<HttpDemoHome> {
 
   Future<List<Post>> fetchPosts() async {
     final response = 
-        await http.get('https://resources.ninghao.net/demo/posts.json');
+        await http.get(Uri(path:'https://resources.ninghao.net/demo/posts.json'));
     
     // print('statusCode: ${response.statusCode}');
     // print('body: ${response.body}');

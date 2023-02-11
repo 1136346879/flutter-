@@ -122,8 +122,8 @@ class MePage extends StatelessWidget {
         Expanded(
           child: Padding(
             padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-            child: new FlatButton.icon(
-              color: Colors.black12,
+            child: new TextButton.icon(
+              // color: Colors.black12,
               onPressed: () {},
               icon: new Icon(
                 Icons.search,
@@ -174,7 +174,7 @@ class MePage extends StatelessWidget {
                       ),
                     ),
                     new Container(
-                      child: new FlatButton(
+                      child: new TextButton(
                           onPressed: (){},
                           child: Row(
                             children: <Widget>[

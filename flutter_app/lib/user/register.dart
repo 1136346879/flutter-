@@ -61,7 +61,7 @@ class RegisterFormState extends State<RegisterForm> {
               ));
         }
       });
-      Scaffold.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text('Registering...'),
       ));
     } else {
@@ -132,10 +132,10 @@ class RegisterFormState extends State<RegisterForm> {
           ),
           Container(
             width: double.infinity,
-            child: RaisedButton(
-              color: Theme.of(context).accentColor,
+            child: ElevatedButton(
+              // color: Theme.of(context).accentColor,
               child: Text('Register', style: TextStyle(color: Colors.white)),
-              elevation: 0.0,
+              // elevation: 0.0,
               onPressed: submitRegisterForm,
             ),
           ),

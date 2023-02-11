@@ -46,7 +46,7 @@ class AppTools {
   /// 获取搜索历史
   List<String> getHistoryKeys() {
     var list = _spf!.getStringList(ConstConfig.SEARCH_HISTORY_LIST);
-    return list;
+    return list??[];
   }
 
   /// 清空搜索历史

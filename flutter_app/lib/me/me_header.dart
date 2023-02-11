@@ -43,7 +43,7 @@ class InfoHeader extends StatelessWidget {
           color: Colors.white,
           borderRadius: new BorderRadius.all(new Radius.circular(6.0))
       ),
-      child: new FlatButton(
+      child: new ElevatedButton(
           onPressed: (){
             ToastUtils.ToastShow().showBottomToast("去登陆");
             _login(context);
@@ -95,7 +95,7 @@ class PersonDataItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return new Container(
       width: (MediaQuery.of(context).size.width - 6.0) / 4,
-      child: new FlatButton(
+      child: new ElevatedButton(
           onPressed: (){},
           child: new Container(
             height: 50.0,

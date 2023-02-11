@@ -34,10 +34,10 @@ class _SnackBarDemoState extends State<SnackBarDemo> {
 class SnackBarButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return ElevatedButton(
       child: Text('Open SnackBar'),
       onPressed: () {
-        Scaffold.of(context).showSnackBar(
+        ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('Processing...'),
             action: SnackBarAction(

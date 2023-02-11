@@ -47,11 +47,11 @@ class _CardDemoState extends State<CardDemo> {
                   ),
                    ButtonBar(
                       children: <Widget>[
-                        FlatButton(
+                        ElevatedButton(
                           child: Text('Like'.toUpperCase()),
                           onPressed: () {},
                         ),
-                        FlatButton(
+                        ElevatedButton(
                           child: Text('Read'.toUpperCase()),
                           onPressed: () {},
                         ),
