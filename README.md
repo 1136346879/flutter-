@@ -102,3 +102,14 @@ flutter开发中遇到的
 		
 请使用命令运行： flutter run --no-sound-null-safety
 
+
+class MediaManager{
+  IMediaOnDemandRepository _repository = IMediaOnDemandRepository.create();
+  bool _isDemo = AppConfigInfo.isDemo;
+
+  MediaManager._internal();
+
+  static MediaManager? _instance;
+
+  static MediaManager get instance => _instance ??= MediaManager._internal();
+
