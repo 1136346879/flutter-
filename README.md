@@ -112,4 +112,22 @@ class MediaManager{
   static MediaManager? _instance;
 
   static MediaManager get instance => _instance ??= MediaManager._internal();
+  ///检查是否切换了demo模式
+  void _checkDemoChanged() {
+    if (_isDemo != AppConfigInfo.isDemo) {
+      _isDemo = AppConfigInfo.isDemo;
+      _repository = IMediaOnDemandRepository.create();
+    }
+  }
+
+
+  typedef MediaCallBack = ValueChanged<ResultModel>;
+typedef MediaListCallBack = ValueChanged<List<DeviceMediaModel>>;
+abstract class IMediaOnDemandRepository {
+  static IMediaOnDemandRepository create() {
+    return AppConfigInfo.isDemo ? DemoMediaOnDemandRepository() : MediaOnDemandRepository();
+  }
+
+  ///数据列表
+  getDataList({required RequestMediaListBody requestMediaListBody});
 
